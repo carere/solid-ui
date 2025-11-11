@@ -9,11 +9,13 @@
     "jsxImportSource": "solid-js",
     "allowJs": true,
     "strict": true,
-    "types": ["vinxi/client"],
+    "noEmit": true,
+    "types": ["vinxi/types/client"],
     "isolatedModules": true,
     "baseUrl": "./",
     "paths": {
       "~/*": ["./src/*"]
-    }
+    },
+    "strictNullChecks": true
   }
 }

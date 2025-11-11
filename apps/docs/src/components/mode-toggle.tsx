@@ -1,38 +1,36 @@
-import { useColorMode } from "@kobalte/core"
+import { getThemeVariant, setTheme } from "@kobalte/solidbase/client"
 
-import { IconLaptop, IconMoon, IconSun } from "~/components/icons"
-import { Button } from "~/registry/ui/button"
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger
-} from "~/registry/ui/dropdown-menu"
+import { Button } from "~/registry/v1/ui/button"
 
 export function ModeToggle() {
-  const { setColorMode } = useColorMode()
+  const toggleTheme = () => setTheme(getThemeVariant() === "dark" ? "light" : "dark")
 
   return (
-    <DropdownMenu>
-      <DropdownMenuTrigger as={Button<"button">} variant="ghost" size="sm" class="w-9 px-0">
-        <IconSun class="size-6 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
-        <IconMoon class="absolute size-6 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
-        <span class="sr-only">Toggle theme</span>
-      </DropdownMenuTrigger>
-      <DropdownMenuContent>
-        <DropdownMenuItem onSelect={() => setColorMode("light")}>
-          <IconSun class="mr-2 size-4" />
-          <span>Light</span>
-        </DropdownMenuItem>
-        <DropdownMenuItem onSelect={() => setColorMode("dark")}>
-          <IconMoon class="mr-2 size-4" />
-          <span>Dark</span>
-        </DropdownMenuItem>
-        <DropdownMenuItem onSelect={() => setColorMode("system")}>
-          <IconLaptop class="mr-2 size-4" />
-          <span>System</span>
-        </DropdownMenuItem>
-      </DropdownMenuContent>
-    </DropdownMenu>
+    <Button
+      class="group/toggle extend-touch-target size-8"
+      onClick={toggleTheme}
+      size="icon"
+      title="Toggle theme"
+      variant="ghost"
+    >
+      <svg
+        class="size-4.5"
+        fill="none"
+        height="24"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        viewBox="0 0 24 24"
+        width="24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" />
+        <path d="M12 3l0 18" />
+        <path d="M12 9l4.65 -4.65" />
+        <path d="M12 14.3l7.37 -7.37" />
+        <path d="M12 19.6l8.85 -8.85" />
+      </svg>
+    </Button>
   )
 }
