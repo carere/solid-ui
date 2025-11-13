@@ -103,6 +103,24 @@ export function IconArrowUp(props: ComponentProps<"svg">) {
   )
 }
 
+export function IconArrowUpRight(props: ComponentProps<"svg">) {
+  return (
+    <svg
+      fill="none"
+      stroke="currentColor"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      viewBox="0 0 24 24"
+      xmlns="http://www.w3.org/2000/svg"
+      {...props}
+    >
+      <path d="M17 7l-10 10" />
+      <path d="M8 7l9 0l0 9" />
+    </svg>
+  )
+}
+
 export function IconBrandGithub(props: ComponentProps<"svg">) {
   return (
     <svg
