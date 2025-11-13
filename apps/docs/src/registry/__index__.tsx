@@ -20,6 +20,20 @@ export const Index: Record<string, any> = {
     categories: undefined,
     meta: undefined,
   },
+  "avatar": {
+    name: "avatar",
+    description: "",
+    type: "registry:ui",
+    registryDependencies: undefined,
+    component: lazy(() => import("~/registry/v1/ui/avatar.tsx")),
+    files: [{
+      path: "registry/ui/avatar.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    categories: undefined,
+    meta: undefined,
+  },
   "button": {
     name: "button",
     description: "",
@@ -183,6 +197,20 @@ export const Index: Record<string, any> = {
     files: [{
       path: "registry/hooks/use-mobile.ts",
       type: "registry:hook",
+      target: ""
+    }],
+    categories: undefined,
+    meta: undefined,
+  },
+  "avatar-demo": {
+    name: "avatar-demo",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["avatar"],
+    component: lazy(() => import("~/registry/v1/examples/avatar-demo.tsx")),
+    files: [{
+      path: "registry/examples/avatar-demo.tsx",
+      type: "registry:example",
       target: ""
     }],
     categories: undefined,

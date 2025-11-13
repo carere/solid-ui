@@ -1,0 +1,55 @@
+---
+title: Avatar
+description: An image element with a fallback for representing the user.
+---
+
+::::tab-group[preview]
+:::tab[Preview]
+
+<ComponentPreview name="avatar-demo" />
+
+:::
+
+:::tab[Code]
+
+```file="~/registry/v1/examples/avatar-demo" frame=none showLineNumbers
+
+```
+
+:::
+::::
+
+## Installation
+
+### CLI
+
+```package-exec
+solidui-cli@latest add avatar
+```
+
+### Manual
+
+Install the following dependencies:
+
+```package-install
+@kobalte/core
+```
+
+Copy and paste the following code into your project.
+
+```file="~/registry/v1/ui/avatar.tsx" showLineNumbers
+
+```
+
+## Usage
+
+```tsx
+import { Avatar, AvatarFallback, AvatarImage } from "~/components/ui/avatar";
+```
+
+```tsx showLineNumbers
+<Avatar>
+  <AvatarImage src="https://github.com/shadcn.png" />
+  <AvatarFallback>CN</AvatarFallback>
+</Avatar>
+```
