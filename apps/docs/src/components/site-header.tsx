@@ -5,6 +5,7 @@ import { IconLogo } from "~/components/icons"
 import { MainNav } from "~/components/main-nav"
 import { MobileNavigation } from "~/components/mobile-navigation"
 import { ModeToggle } from "~/components/mode-toggle"
+import { ThemeSelect } from "~/components/theme-select"
 import { Button } from "~/registry/v1/ui/button"
 import { Separator } from "~/registry/v1/ui/separator"
 
@@ -19,6 +20,8 @@ export function SiteHeader() {
           </Button>
           <MainNav class="hidden lg:flex" />
           <div class="ml-auto flex items-center gap-2 md:flex-1 md:justify-end">
+            <ThemeSelect />
+            <Separator orientation="vertical" />
             <GitHubLink />
             <Separator orientation="vertical" />
             <ModeToggle />
