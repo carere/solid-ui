@@ -7,9 +7,9 @@ import { IconArrowLeft, IconArrowRight, IconArrowUpRight } from "~/components/ic
 import { MainNavigation } from "~/components/main-navigation"
 import { TableOfContents } from "~/components/table-of-contents"
 import { getPrevAndNext } from "~/config/docs"
-import { Badge } from "~/registry/v1/ui/badge"
-import { Button } from "~/registry/v1/ui/button"
-import { SidebarProvider } from "~/registry/v1/ui/sidebar"
+import { Badge } from "~/registry/ui/badge"
+import { Button } from "~/registry/ui/button"
+import { SidebarProvider } from "~/registry/ui/sidebar"
 import type { MyFrontmatter } from "~/types"
 
 export function DocsLayout(props: ParentProps) {

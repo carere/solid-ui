@@ -18,7 +18,7 @@ export default createHandler(() => (
           <link href="/site.webmanifest" rel="manifest" />
           {assets}
         </head>
-        <body class="overscroll-none font-sans text-foreground antialiased [--footer-height:calc(var(--spacing)*14)] [--header-height:calc(var(--spacing)*14)]">
+        <body class="style-vega overscroll-none font-sans text-foreground antialiased [--footer-height:calc(var(--spacing)*14)] [--header-height:calc(var(--spacing)*14)]">
           <div id="app">{children}</div>
           {scripts}
         </body>

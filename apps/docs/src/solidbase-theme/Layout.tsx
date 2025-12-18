@@ -5,9 +5,9 @@ import { useMatch } from "@solidjs/router"
 
 import { useThemeListener } from "@kobalte/solidbase/client"
 
+import { DesignSystemProvider } from "~/components/design-system-provider"
 import { DocsLayout } from "~/components/docs-layout"
 import { SiteHeader } from "~/components/site-header"
-import { ThemeProvider } from "~/components/theme-provider"
 
 export default function (props: RouteSectionProps) {
   useThemeListener()
@@ -16,7 +16,7 @@ export default function (props: RouteSectionProps) {
   const isDocsPage = useMatch(() => "/docs/*")
 
   return (
-    <ThemeProvider>
+    <DesignSystemProvider>
       <Title>SolidUI</Title>
       <Show fallback={props.children} when={!isBlock()}>
         <SiteHeader />
@@ -26,6 +26,6 @@ export default function (props: RouteSectionProps) {
           </Show>
         </main>
       </Show>
-    </ThemeProvider>
+    </DesignSystemProvider>
   )
 }
