@@ -36,6 +36,10 @@ export const docsConfig: Config = {
       title: "Components",
       items: [
         {
+          title: "Accordion",
+          href: "/docs/components/accordion"
+        },
+        {
           title: "Avatar",
           href: "/docs/components/avatar"
         },
@@ -93,8 +97,8 @@ export const getPrevAndNext = (curHref: string) => {
   const allElements = flatConfig()
   const curIdx = allElements.findIndex((el) => el.href === curHref)
 
-  let prev: NavElement | null = null
-  let next: NavElement | null = null
+  let prev: NavElement | undefined
+  let next: NavElement | undefined
 
   if (curIdx === -1) {
     return { prev: null, next: null }
