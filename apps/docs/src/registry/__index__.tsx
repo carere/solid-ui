@@ -32,6 +32,20 @@ export const Index: Record<string, any> = {
     categories: undefined,
     meta: undefined,
   },
+  "alert": {
+    name: "alert",
+    description: "",
+    type: "registry:ui",
+    registryDependencies: undefined,
+    component: lazy(() => import("~/registry/ui/alert.tsx")),
+    files: [{
+      path: "registry/ui/alert.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    categories: undefined,
+    meta: undefined,
+  },
   "avatar": {
     name: "avatar",
     description: "",
@@ -222,6 +236,48 @@ export const Index: Record<string, any> = {
     component: lazy(() => import("~/registry/examples/accordion-demo.tsx")),
     files: [{
       path: "registry/examples/accordion-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    categories: undefined,
+    meta: undefined,
+  },
+  "alert-default": {
+    name: "alert-default",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["alert"],
+    component: lazy(() => import("~/registry/examples/alert-default.tsx")),
+    files: [{
+      path: "registry/examples/alert-default.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    categories: undefined,
+    meta: undefined,
+  },
+  "alert-demo": {
+    name: "alert-demo",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["alert"],
+    component: lazy(() => import("~/registry/examples/alert-demo.tsx")),
+    files: [{
+      path: "registry/examples/alert-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    categories: undefined,
+    meta: undefined,
+  },
+  "alert-destructive": {
+    name: "alert-destructive",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["alert"],
+    component: lazy(() => import("~/registry/examples/alert-destructive.tsx")),
+    files: [{
+      path: "registry/examples/alert-destructive.tsx",
       type: "registry:example",
       target: ""
     }],
