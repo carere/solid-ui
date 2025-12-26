@@ -13,7 +13,7 @@ import { cn } from "~/lib/utils"
 import { Separator } from "~/registry/ui/separator"
 
 const buttonGroupVariants = cva(
-  "cn-button-group flex w-fit items-stretch [&>*]:focus-visible:z-10 [&>*]:focus-visible:relative [&>[data-slot=select-trigger]:not([class*='w-'])]:w-fit [&>input]:flex-1 ",
+  "cn-button-group flex w-fit items-stretch [&>*]:focus-visible:relative [&>*]:focus-visible:z-10 [&>[data-slot=select-trigger]:not([class*='w-'])]:w-fit [&>input]:flex-1",
   {
     variants: {
       orientation: {
@@ -35,10 +35,10 @@ const ButtonGroup: Component<ButtonGroupProps> = (props) => {
   const [local, others] = splitProps(props, ["class", "orientation"])
   return (
     <div
-      role="group"
-      data-slot="button-group"
-      data-orientation={local.orientation}
       class={cn(buttonGroupVariants({ orientation: local.orientation }), local.class)}
+      data-orientation={local.orientation}
+      data-slot="button-group"
+      role="group"
       {...others}
     />
   )
@@ -50,10 +50,7 @@ const ButtonGroupText = <T extends ValidComponent = "div">(
   const [local, others] = splitProps(props, ["class"])
   return (
     <Polymorphic
-      class={cn(
-        "cn-button-group-text flex items-center [&_svg]:pointer-events-none",
-        local.class
-      )}
+      class={cn("cn-button-group-text flex items-center [&_svg]:pointer-events-none", local.class)}
       {...others}
     />
   )
@@ -66,12 +63,12 @@ const ButtonGroupSeparator: Component<ButtonGroupSeparatorProps> = (rawProps) =>
   const [local, others] = splitProps(props, ["class", "orientation"])
   return (
     <Separator
-      data-slot="button-group-separator"
-      orientation={local.orientation}
       class={cn(
-        "cn-button-group-separator relative self-stretch data-[orientation=horizontal]:mx-px data-[orientation=horizontal]:w-auto data-[orientation=vertical]:my-px data-[orientation=vertical]:h-auto",
+        "cn-button-group-separator relative self-stretch data-[orientation=horizontal]:mx-px data-[orientation=vertical]:my-px data-[orientation=vertical]:h-auto data-[orientation=horizontal]:w-auto",
         local.class
       )}
+      data-slot="button-group-separator"
+      orientation={local.orientation}
       {...others}
     />
   )
