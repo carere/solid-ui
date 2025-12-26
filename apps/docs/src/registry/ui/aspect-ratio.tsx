@@ -1,15 +1,32 @@
-import type { ComponentProps, ValidComponent } from "solid-js"
-import { AspectRatio as AspectRatioPrimitive } from "@kobalte/core/aspect-ratio"
-import type { PolymorphicProps } from "@kobalte/core/polymorphic"
+import type { Component, ComponentProps } from "solid-js"
+import { mergeProps, splitProps } from "solid-js"
 
-type AspectRatioProps<T extends ValidComponent = "div"> = ComponentProps<
-  typeof AspectRatioPrimitive
->
+type AspectRatioProps = ComponentProps<"div"> & { ratio?: number }
 
-const AspectRatio = <T extends ValidComponent = "div">(
-  props: PolymorphicProps<T, AspectRatioProps<T>>
-) => {
-  return <AspectRatioPrimitive data-slot="aspect-ratio" {...props} />
+const AspectRatio: Component<AspectRatioProps> = (rawProps) => {
+  const props = mergeProps({ ratio: 1 / 1 }, rawProps)
+  const [local, others] = splitProps(props, ["ratio"])
+  return (
+    <div
+      data-slot="aspect-ratio"
+      style={{
+        position: "relative",
+        width: "100%",
+        "padding-bottom": `${100 / local.ratio}%`
+      }}
+    >
+      <div
+        style={{
+          position: "absolute",
+          top: 0,
+          right: 0,
+          bottom: 0,
+          left: 0
+        }}
+        {...others}
+      />
+    </div>
+  )
 }
 
 export { AspectRatio }
