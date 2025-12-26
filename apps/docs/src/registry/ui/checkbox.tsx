@@ -22,13 +22,13 @@ const Checkbox = <T extends ValidComponent = "div">(
       <CheckboxPrimitive.Input class="peer" data-slot="checkbox-input" />
       <CheckboxPrimitive.Control
         class={cn(
-          "size-4 shrink-0 rounded-sm border border-input outline-none peer-focus-visible:border-ring peer-focus-visible:ring-[3px] peer-focus-visible:ring-ring/50 aria-invalid:border-destructive aria-invalid:ring-destructive/20 data-disabled:cursor-not-allowed data-[checked]:border-primary data-[indeterminate]:border-primary data-[checked]:bg-primary data-[indeterminate]:bg-primary data-[checked]:text-primary-foreground data-[indeterminate]:text-primary-foreground data-disabled:opacity-50",
+          "cn-checkbox peer relative shrink-0 outline-none after:absolute after:-inset-x-3 after:-inset-y-2 disabled:cursor-not-allowed disabled:opacity-50",
           local.class
         )}
         data-slot="checkbox-control"
       >
         <CheckboxPrimitive.Indicator
-          class="flex items-center justify-center text-current transition-none"
+          class="cn-checkbox-indicator grid place-content-center text-current transition-none"
           data-slot="checkbox-indicator"
         >
           <Switch>
