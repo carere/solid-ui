@@ -270,6 +270,20 @@ export const Index: Record<string, any> = {
     categories: undefined,
     meta: undefined,
   },
+  "breadcrumb-collapsed": {
+    name: "breadcrumb-collapsed",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["breadcrumb"],
+    component: lazy(() => import("~/registry/examples/breadcrumb-collapsed.tsx")),
+    files: [{
+      path: "registry/examples/breadcrumb-collapsed.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    categories: undefined,
+    meta: undefined,
+  },
   "breadcrumb-dropdown": {
     name: "breadcrumb-dropdown",
     description: "",

@@ -1,11 +1,12 @@
 import { Slash } from "lucide-solid"
+
 import {
   Breadcrumb,
   BreadcrumbItem,
   BreadcrumbLink,
   BreadcrumbList,
   BreadcrumbPage,
-  BreadcrumbSeparator
+  BreadcrumbSeparator as BreadcrumbSeparatorComponent
 } from "~/registry/ui/breadcrumb"
 
 export default function BreadcrumbSeparator() {
@@ -15,15 +16,15 @@ export default function BreadcrumbSeparator() {
         <BreadcrumbItem>
           <BreadcrumbLink href="/">Home</BreadcrumbLink>
         </BreadcrumbItem>
-        <BreadcrumbSeparator>
+        <BreadcrumbSeparatorComponent>
           <Slash />
-        </BreadcrumbSeparator>
+        </BreadcrumbSeparatorComponent>
         <BreadcrumbItem>
           <BreadcrumbLink href="/components">Components</BreadcrumbLink>
         </BreadcrumbItem>
-        <BreadcrumbSeparator>
+        <BreadcrumbSeparatorComponent>
           <Slash />
-        </BreadcrumbSeparator>
+        </BreadcrumbSeparatorComponent>
         <BreadcrumbItem>
           <BreadcrumbPage>Breadcrumb</BreadcrumbPage>
         </BreadcrumbItem>

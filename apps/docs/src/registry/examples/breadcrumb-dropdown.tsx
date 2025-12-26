@@ -1,14 +1,13 @@
-import { ChevronDown } from "lucide-solid"
+import { ChevronDownIcon, SlashIcon } from "lucide-solid"
+
 import {
   Breadcrumb,
-  BreadcrumbEllipsis,
   BreadcrumbItem,
   BreadcrumbLink,
   BreadcrumbList,
   BreadcrumbPage,
   BreadcrumbSeparator
 } from "~/registry/ui/breadcrumb"
-import { Button } from "~/registry/ui/button"
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -16,39 +15,34 @@ import {
   DropdownMenuTrigger
 } from "~/registry/ui/dropdown-menu"
 
-export default function BreadcrumbDropdown() {
+export default function BreadcrumbWithDropdown() {
   return (
     <Breadcrumb>
       <BreadcrumbList>
         <BreadcrumbItem>
-          <BreadcrumbLink href="/">Home</BreadcrumbLink>
+          <BreadcrumbLink as="a" href="/">
+            Home
+          </BreadcrumbLink>
         </BreadcrumbItem>
-        <BreadcrumbSeparator />
+        <BreadcrumbSeparator>
+          <SlashIcon />
+        </BreadcrumbSeparator>
         <BreadcrumbItem>
           <DropdownMenu>
-            <DropdownMenuTrigger
-              as={Button}
-              variant="ghost"
-              size="sm"
-              class="h-auto gap-1 p-0 focus-visible:ring-0"
-            >
-              <BreadcrumbEllipsis />
-              <ChevronDown class="size-3" />
+            <DropdownMenuTrigger class="flex items-center gap-1 [&_svg:not([class*='size-'])]:size-3.5 [&_svg]:pointer-events-none [&_svg]:shrink-0">
+              Components
+              <ChevronDownIcon />
             </DropdownMenuTrigger>
-            <DropdownMenuContent align="start">
-              <DropdownMenuItem href="/docs">
-                Documentation
-              </DropdownMenuItem>
-              <DropdownMenuItem href="/themes">Themes</DropdownMenuItem>
-              <DropdownMenuItem href="/github">GitHub</DropdownMenuItem>
+            <DropdownMenuContent>
+              <DropdownMenuItem>Documentation</DropdownMenuItem>
+              <DropdownMenuItem>Themes</DropdownMenuItem>
+              <DropdownMenuItem>GitHub</DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
         </BreadcrumbItem>
-        <BreadcrumbSeparator />
-        <BreadcrumbItem>
-          <BreadcrumbLink href="/components">Components</BreadcrumbLink>
-        </BreadcrumbItem>
-        <BreadcrumbSeparator />
+        <BreadcrumbSeparator>
+          <SlashIcon />
+        </BreadcrumbSeparator>
         <BreadcrumbItem>
           <BreadcrumbPage>Breadcrumb</BreadcrumbPage>
         </BreadcrumbItem>

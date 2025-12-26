@@ -35,6 +35,17 @@ export const examples: Registry["items"] = [
     ]
   },
   {
+    name: "breadcrumb-collapsed",
+    type: "registry:example",
+    registryDependencies: ["breadcrumb"],
+    files: [
+      {
+        path: "examples/breadcrumb-collapsed.tsx",
+        type: "registry:example"
+      }
+    ]
+  },
+  {
     name: "breadcrumb-dropdown",
     type: "registry:example",
     registryDependencies: ["breadcrumb", "dropdown-menu", "button"],
