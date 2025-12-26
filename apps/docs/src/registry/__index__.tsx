@@ -88,6 +88,20 @@ export const Index: Record<string, any> = {
     categories: undefined,
     meta: undefined,
   },
+  "context-menu": {
+    name: "context-menu",
+    description: "",
+    type: "registry:ui",
+    registryDependencies: undefined,
+    component: lazy(() => import("~/registry/ui/context-menu.tsx")),
+    files: [{
+      path: "registry/ui/context-menu.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    categories: undefined,
+    meta: undefined,
+  },
   "dropdown-menu": {
     name: "dropdown-menu",
     description: "",
@@ -446,6 +460,48 @@ export const Index: Record<string, any> = {
     component: lazy(() => import("~/registry/examples/checkbox-demo.tsx")),
     files: [{
       path: "registry/examples/checkbox-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    categories: undefined,
+    meta: undefined,
+  },
+  "context-menu-checkboxes": {
+    name: "context-menu-checkboxes",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["context-menu"],
+    component: lazy(() => import("~/registry/examples/context-menu-checkboxes.tsx")),
+    files: [{
+      path: "registry/examples/context-menu-checkboxes.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    categories: undefined,
+    meta: undefined,
+  },
+  "context-menu-demo": {
+    name: "context-menu-demo",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["context-menu"],
+    component: lazy(() => import("~/registry/examples/context-menu-demo.tsx")),
+    files: [{
+      path: "registry/examples/context-menu-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    categories: undefined,
+    meta: undefined,
+  },
+  "context-menu-radio-group": {
+    name: "context-menu-radio-group",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["context-menu"],
+    component: lazy(() => import("~/registry/examples/context-menu-radio-group.tsx")),
+    files: [{
+      path: "registry/examples/context-menu-radio-group.tsx",
       type: "registry:example",
       target: ""
     }],

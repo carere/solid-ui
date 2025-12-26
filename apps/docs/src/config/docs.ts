@@ -52,6 +52,10 @@ export const docsConfig: Config = {
           href: "/docs/components/checkbox"
         },
         {
+          title: "Context Menu",
+          href: "/docs/components/context-menu"
+        },
+        {
           title: "Dropdown Menu",
           href: "/docs/components/dropdown-menu"
         },
