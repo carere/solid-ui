@@ -41,58 +41,19 @@ import { Badge } from "~/components/ui/badge";
 ```
 
 ```tsx
-<Badge variant="default">Badge</Badge>
+<Badge variant="default | outline | secondary | destructive">Badge</Badge>
 ```
 
-## Examples
+### Link
 
-### Secondary
+You can use the `as` prop to make another component look like a badge. Here's an example of an anchor that looks like a badge.
 
-::::tab-group[secondary]
-:::tab[Preview]
+```tsx showLineNumbers
+import { Badge } from "~/components/ui/badge"
 
-<ComponentPreview name="badge-secondary" />
-
-:::
-:::tab[Code]
-
-```file="~/registry/examples/badge-secondary" frame=none showLineNumbers
-
+export function LinkAsBadge() {
+  return (
+    <Badge as="a" href="/" />
+  )
+}
 ```
-
-:::
-::::
-
-### Destructive
-
-::::tab-group[destructive]
-:::tab[Preview]
-
-<ComponentPreview name="badge-destructive" />
-
-:::
-:::tab[Code]
-
-```file="~/registry/examples/badge-destructive" frame=none showLineNumbers
-
-```
-
-:::
-::::
-
-### Outline
-
-::::tab-group[outline]
-:::tab[Preview]
-
-<ComponentPreview name="badge-outline" />
-
-:::
-:::tab[Code]
-
-```file="~/registry/examples/badge-outline" frame=none showLineNumbers
-
-```
-
-:::
-::::

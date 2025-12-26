@@ -270,48 +270,6 @@ export const Index: Record<string, any> = {
     categories: undefined,
     meta: undefined,
   },
-  "badge-destructive": {
-    name: "badge-destructive",
-    description: "",
-    type: "registry:example",
-    registryDependencies: ["badge"],
-    component: lazy(() => import("~/registry/examples/badge-destructive.tsx")),
-    files: [{
-      path: "registry/examples/badge-destructive.tsx",
-      type: "registry:example",
-      target: ""
-    }],
-    categories: undefined,
-    meta: undefined,
-  },
-  "badge-outline": {
-    name: "badge-outline",
-    description: "",
-    type: "registry:example",
-    registryDependencies: ["badge"],
-    component: lazy(() => import("~/registry/examples/badge-outline.tsx")),
-    files: [{
-      path: "registry/examples/badge-outline.tsx",
-      type: "registry:example",
-      target: ""
-    }],
-    categories: undefined,
-    meta: undefined,
-  },
-  "badge-secondary": {
-    name: "badge-secondary",
-    description: "",
-    type: "registry:example",
-    registryDependencies: ["badge"],
-    component: lazy(() => import("~/registry/examples/badge-secondary.tsx")),
-    files: [{
-      path: "registry/examples/badge-secondary.tsx",
-      type: "registry:example",
-      target: ""
-    }],
-    categories: undefined,
-    meta: undefined,
-  },
   "button-default": {
     name: "button-default",
     description: "",
