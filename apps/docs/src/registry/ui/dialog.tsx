@@ -31,10 +31,7 @@ const DialogOverlay = <T extends ValidComponent = "div">(
   const [local, others] = splitProps(props as DialogOverlayProps, ["class"])
   return (
     <DialogPrimitive.Overlay
-      class={cn(
-        "data-[closed]:fade-out-0 data-[expanded]:fade-in-0 fixed inset-0 z-50 bg-black/50 data-[closed]:animate-out data-[expanded]:animate-in",
-        local.class
-      )}
+      class={cn("cn-dialog-overlay fixed inset-0 isolate z-50", local.class)}
       data-slot="dialog-overlay"
       {...others}
     />
@@ -62,7 +59,7 @@ const DialogContent = <T extends ValidComponent = "div">(
       <DialogOverlay />
       <DialogPrimitive.Content
         class={cn(
-          "data-[closed]:fade-out-0 data-[closed]:zoom-out-95 data-[expanded]:fade-in-0 data-[expanded]:zoom-in-95 fixed top-[50%] left-[50%] z-50 grid w-full max-w-[calc(100%-2rem)] translate-x-[-50%] translate-y-[-50%] gap-4 rounded-lg border bg-background p-6 shadow-lg duration-200 data-[closed]:animate-out data-[expanded]:animate-in sm:max-w-lg",
+          "cn-dialog-content fixed top-1/2 left-1/2 z-50 w-full -translate-x-1/2 -translate-y-1/2",
           local.class
         )}
         data-slot="dialog-content"
@@ -71,7 +68,7 @@ const DialogContent = <T extends ValidComponent = "div">(
         {local.children}
         <Show when={local.showCloseButton}>
           <DialogPrimitive.CloseButton
-            class="absolute top-4 right-4 rounded-xs opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-hidden focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none data-[expanded]:bg-accent data-[expanded]:text-muted-foreground [&_svg:not([class*='size-'])]:size-4 [&_svg]:pointer-events-none [&_svg]:shrink-0"
+            class="cn-dialog-close"
             data-slot="dialog-close"
           >
             <svg
@@ -84,8 +81,8 @@ const DialogContent = <T extends ValidComponent = "div">(
               viewBox="0 0 24 24"
               xmlns="http://www.w3.org/2000/svg"
             >
-              <path d="M18 6l-12 12" />
-              <path d="M6 6l12 12" />
+              <path d="M18 6 6 18" />
+              <path d="m6 6 12 12" />
             </svg>
             <span class="sr-only">Close</span>
           </DialogPrimitive.CloseButton>
@@ -95,25 +92,49 @@ const DialogContent = <T extends ValidComponent = "div">(
   )
 }
 
-const DialogHeader: Component<ComponentProps<"div">> = (props) => {
+type DialogHeaderProps = ComponentProps<"div"> & {
+  class?: string | undefined
+}
+
+const DialogHeader: Component<DialogHeaderProps> = (props) => {
   const [local, others] = splitProps(props, ["class"])
   return (
     <div
-      class={cn("flex flex-col gap-2 text-center sm:text-left", local.class)}
+      class={cn("cn-dialog-header flex flex-col", local.class)}
       data-slot="dialog-header"
       {...others}
     />
   )
 }
 
-const DialogFooter: Component<ComponentProps<"div">> = (props) => {
-  const [local, others] = splitProps(props, ["class"])
+type DialogFooterProps = ComponentProps<"div"> & {
+  class?: string | undefined
+  children?: JSX.Element
+  showCloseButton?: boolean
+}
+
+const DialogFooter: Component<DialogFooterProps> = (rawProps) => {
+  const props = mergeProps({ showCloseButton: false }, rawProps)
+  const [local, others] = splitProps(props, ["class", "children", "showCloseButton"])
   return (
     <div
-      class={cn("flex flex-col-reverse gap-2 sm:flex-row sm:justify-end", local.class)}
+      class={cn(
+        "cn-dialog-footer flex flex-col-reverse gap-2 sm:flex-row sm:justify-end",
+        local.class
+      )}
       data-slot="dialog-footer"
       {...others}
-    />
+    >
+      {local.children}
+      <Show when={local.showCloseButton}>
+        <DialogPrimitive.CloseButton
+          class="cn-button cn-button-variant-outline cn-button-size-default"
+          data-slot="button"
+        >
+          Close
+        </DialogPrimitive.CloseButton>
+      </Show>
+    </div>
   )
 }
 
@@ -127,7 +148,7 @@ const DialogTitle = <T extends ValidComponent = "h2">(
   const [local, others] = splitProps(props as DialogTitleProps, ["class"])
   return (
     <DialogPrimitive.Title
-      class={cn("font-semibold text-lg leading-none", local.class)}
+      class={cn("cn-dialog-title", local.class)}
       data-slot="dialog-title"
       {...others}
     />
@@ -145,7 +166,7 @@ const DialogDescription = <T extends ValidComponent = "p">(
   const [local, others] = splitProps(props as DialogDescriptionProps, ["class"])
   return (
     <DialogPrimitive.Description
-      class={cn("text-muted-foreground text-sm", local.class)}
+      class={cn("cn-dialog-description", local.class)}
       data-slot="dialog-description"
       {...others}
     />
@@ -154,11 +175,13 @@ const DialogDescription = <T extends ValidComponent = "p">(
 
 export {
   Dialog,
-  DialogTrigger,
   DialogClose,
   DialogContent,
-  DialogHeader,
+  DialogDescription,
   DialogFooter,
+  DialogHeader,
+  DialogOverlay,
+  DialogPortal,
   DialogTitle,
-  DialogDescription
+  DialogTrigger
 }

@@ -189,6 +189,28 @@ export const examples: Registry["items"] = [
     ]
   },
   {
+    name: "dialog-demo",
+    type: "registry:example",
+    registryDependencies: ["dialog", "button", "field", "input"],
+    files: [
+      {
+        path: "examples/dialog-demo.tsx",
+        type: "registry:example"
+      }
+    ]
+  },
+  {
+    name: "dialog-close-button",
+    type: "registry:example",
+    registryDependencies: ["dialog", "button"],
+    files: [
+      {
+        path: "examples/dialog-close-button.tsx",
+        type: "registry:example"
+      }
+    ]
+  },
+  {
     name: "dropdown-menu-demo",
     type: "registry:example",
     registryDependencies: ["dropdown-menu"],
