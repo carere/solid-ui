@@ -13,34 +13,12 @@ export const examples: Registry["items"] = [
     ]
   },
   {
-    name: "alert-default",
-    type: "registry:example",
-    registryDependencies: ["alert"],
-    files: [
-      {
-        path: "examples/alert-default.tsx",
-        type: "registry:example"
-      }
-    ]
-  },
-  {
     name: "alert-demo",
     type: "registry:example",
     registryDependencies: ["alert"],
     files: [
       {
         path: "examples/alert-demo.tsx",
-        type: "registry:example"
-      }
-    ]
-  },
-  {
-    name: "alert-destructive",
-    type: "registry:example",
-    registryDependencies: ["alert"],
-    files: [
-      {
-        path: "examples/alert-destructive.tsx",
         type: "registry:example"
       }
     ]
