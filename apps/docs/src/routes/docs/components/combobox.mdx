@@ -1,0 +1,89 @@
+---
+title: Combobox
+description: Autocomplete input with a list of suggestions.
+links:
+  doc: https://kobalte.dev/docs/core/components/combobox
+  api: https://kobalte.dev/docs/core/components/combobox#api-reference
+---
+
+::::tab-group[preview]
+:::tab[Preview]
+
+<ComponentPreview name="combobox-demo" />
+
+:::
+:::tab[Code]
+
+```file="~/registry/examples/combobox-demo" frame=none showLineNumbers
+
+```
+
+:::
+::::
+
+## Installation
+
+### CLI
+
+```package-exec
+solidui-cli@latest add combobox
+```
+
+### Manual
+
+Install the following dependencies:
+
+```package-install
+@kobalte/core
+```
+
+Copy and paste the following code into your project.
+
+```file="~/registry/ui/combobox.tsx" showLineNumbers
+
+```
+
+## Usage
+
+```tsx
+import {
+  Combobox,
+  ComboboxContent,
+  ComboboxControl,
+  ComboboxInput,
+  ComboboxItem,
+  ComboboxListbox,
+  ComboboxTrigger
+} from "~/components/ui/combobox";
+```
+
+```tsx
+const frameworks = [
+  { value: "next.js", label: "Next.js" },
+  { value: "sveltekit", label: "SvelteKit" },
+  { value: "nuxt.js", label: "Nuxt.js" },
+  { value: "remix", label: "Remix" },
+  { value: "astro", label: "Astro" }
+];
+
+<Combobox
+  options={frameworks}
+  optionValue="value"
+  optionTextValue="label"
+  optionLabel="label"
+  placeholder="Select a framework..."
+  itemComponent={(props) => (
+    <ComboboxItem item={props.item}>
+      {props.item.rawValue.label}
+    </ComboboxItem>
+  )}
+>
+  <ComboboxControl>
+    <ComboboxInput />
+    <ComboboxTrigger />
+  </ComboboxControl>
+  <ComboboxContent>
+    <ComboboxListbox />
+  </ComboboxContent>
+</Combobox>
+```
