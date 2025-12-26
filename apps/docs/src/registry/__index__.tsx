@@ -46,6 +46,20 @@ export const Index: Record<string, any> = {
     categories: undefined,
     meta: undefined,
   },
+  "badge": {
+    name: "badge",
+    description: "",
+    type: "registry:ui",
+    registryDependencies: undefined,
+    component: lazy(() => import("~/registry/ui/badge.tsx")),
+    files: [{
+      path: "registry/ui/badge.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    categories: undefined,
+    meta: undefined,
+  },
   "button": {
     name: "button",
     description: "",
@@ -236,6 +250,62 @@ export const Index: Record<string, any> = {
     component: lazy(() => import("~/registry/examples/avatar-demo.tsx")),
     files: [{
       path: "registry/examples/avatar-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    categories: undefined,
+    meta: undefined,
+  },
+  "badge-demo": {
+    name: "badge-demo",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["badge"],
+    component: lazy(() => import("~/registry/examples/badge-demo.tsx")),
+    files: [{
+      path: "registry/examples/badge-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    categories: undefined,
+    meta: undefined,
+  },
+  "badge-destructive": {
+    name: "badge-destructive",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["badge"],
+    component: lazy(() => import("~/registry/examples/badge-destructive.tsx")),
+    files: [{
+      path: "registry/examples/badge-destructive.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    categories: undefined,
+    meta: undefined,
+  },
+  "badge-outline": {
+    name: "badge-outline",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["badge"],
+    component: lazy(() => import("~/registry/examples/badge-outline.tsx")),
+    files: [{
+      path: "registry/examples/badge-outline.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    categories: undefined,
+    meta: undefined,
+  },
+  "badge-secondary": {
+    name: "badge-secondary",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["badge"],
+    component: lazy(() => import("~/registry/examples/badge-secondary.tsx")),
+    files: [{
+      path: "registry/examples/badge-secondary.tsx",
       type: "registry:example",
       target: ""
     }],
