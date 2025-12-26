@@ -48,6 +48,11 @@ export const docsConfig: Config = {
           href: "/docs/components/button"
         },
         {
+          title: "Carousel",
+          href: "/docs/components/carousel",
+          status: "new"
+        },
+        {
           title: "Checkbox",
           href: "/docs/components/checkbox"
         },

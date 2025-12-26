@@ -47,6 +47,18 @@ export const ui: Registry["items"] = [
     ]
   },
   {
+    name: "carousel",
+    type: "registry:ui",
+    dependencies: ["embla-carousel-solid", "lucide-solid"],
+    registryDependencies: ["button"],
+    files: [
+      {
+        path: "ui/carousel.tsx",
+        type: "registry:ui"
+      }
+    ]
+  },
+  {
     name: "checkbox",
     type: "registry:ui",
     dependencies: ["@kobalte/core"],
