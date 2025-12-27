@@ -22,7 +22,7 @@ const Checkbox = <T extends ValidComponent = "div">(
       <CheckboxPrimitive.Input class="peer" data-slot="checkbox-input" />
       <CheckboxPrimitive.Control
         class={cn(
-          "cn-checkbox peer relative shrink-0 outline-none after:absolute after:-inset-x-3 after:-inset-y-2 disabled:cursor-not-allowed disabled:opacity-50",
+          "cn-checkbox peer after:-inset-x-3 after:-inset-y-2 relative shrink-0 outline-none after:absolute disabled:cursor-not-allowed disabled:opacity-50",
           local.class
         )}
         data-slot="checkbox-control"
