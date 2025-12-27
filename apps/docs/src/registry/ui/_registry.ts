@@ -91,6 +91,16 @@ export const ui: Registry["items"] = [
     ]
   },
   {
+    name: "card",
+    type: "registry:ui",
+    files: [
+      {
+        path: "ui/card.tsx",
+        type: "registry:ui"
+      }
+    ]
+  },
+  {
     name: "button-group",
     type: "registry:ui",
     dependencies: ["@kobalte/core"],
