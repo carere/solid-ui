@@ -186,6 +186,20 @@ export const Index: Record<string, any> = {
     categories: undefined,
     meta: undefined,
   },
+  "collapsible": {
+    name: "collapsible",
+    description: "",
+    type: "registry:ui",
+    registryDependencies: undefined,
+    component: lazy(() => import("~/registry/ui/collapsible.tsx")),
+    files: [{
+      path: "registry/ui/collapsible.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    categories: undefined,
+    meta: undefined,
+  },
   "dropdown-menu": {
     name: "dropdown-menu",
     description: "",
@@ -894,6 +908,20 @@ export const Index: Record<string, any> = {
     component: lazy(() => import("~/registry/examples/checkbox-demo.tsx")),
     files: [{
       path: "registry/examples/checkbox-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    categories: undefined,
+    meta: undefined,
+  },
+  "collapsible-demo": {
+    name: "collapsible-demo",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["collapsible","button"],
+    component: lazy(() => import("~/registry/examples/collapsible-demo.tsx")),
+    files: [{
+      path: "registry/examples/collapsible-demo.tsx",
       type: "registry:example",
       target: ""
     }],
