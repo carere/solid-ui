@@ -7,11 +7,11 @@ const Label: Component<ComponentProps<"label">> = (props) => {
   const [local, others] = splitProps(props, ["class"])
   return (
     <label
-      data-slot="label"
       class={cn(
-        "cn-label flex items-center select-none group-data-[disabled=true]:pointer-events-none peer-disabled:cursor-not-allowed",
+        "cn-label flex select-none items-center peer-disabled:cursor-not-allowed group-data-[disabled=true]:pointer-events-none",
         local.class
       )}
+      data-slot="label"
       {...others}
     />
   )
