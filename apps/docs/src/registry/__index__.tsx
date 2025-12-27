@@ -46,6 +46,20 @@ export const Index: Record<string, any> = {
     categories: undefined,
     meta: undefined,
   },
+  "aspect-ratio": {
+    name: "aspect-ratio",
+    description: "",
+    type: "registry:ui",
+    registryDependencies: undefined,
+    component: lazy(() => import("~/registry/ui/aspect-ratio.tsx")),
+    files: [{
+      path: "registry/ui/aspect-ratio.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    categories: undefined,
+    meta: undefined,
+  },
   "alert-dialog": {
     name: "alert-dialog",
     description: "",
@@ -278,6 +292,20 @@ export const Index: Record<string, any> = {
     component: lazy(() => import("~/registry/examples/alert-dialog-demo.tsx")),
     files: [{
       path: "registry/examples/alert-dialog-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    categories: undefined,
+    meta: undefined,
+  },
+  "aspect-ratio-demo": {
+    name: "aspect-ratio-demo",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["aspect-ratio"],
+    component: lazy(() => import("~/registry/examples/aspect-ratio-demo.tsx")),
+    files: [{
+      path: "registry/examples/aspect-ratio-demo.tsx",
       type: "registry:example",
       target: ""
     }],
