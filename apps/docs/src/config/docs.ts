@@ -102,6 +102,10 @@ export const docsConfig: Config = {
           href: "/docs/components/input-group"
         },
         {
+          title: "Label",
+          href: "/docs/components/label"
+        },
+        {
           title: "Radio Group",
           href: "/docs/components/radio-group"
         },
