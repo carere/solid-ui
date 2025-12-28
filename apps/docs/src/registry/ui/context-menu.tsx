@@ -3,6 +3,7 @@ import { mergeProps, splitProps } from "solid-js"
 
 import * as ContextMenuPrimitive from "@kobalte/core/context-menu"
 import type { PolymorphicProps } from "@kobalte/core/polymorphic"
+import { Check, CheckIcon, ChevronRight } from "lucide-solid"
 
 import { cn } from "~/lib/utils"
 
@@ -25,10 +26,7 @@ const ContextMenuTrigger = <T extends ValidComponent = "div">(
   const [local, others] = splitProps(props as ContextMenuTriggerProps, ["class"])
   return (
     <ContextMenuPrimitive.Trigger
-      class={cn(
-        "flex h-[150px] w-[300px] items-center justify-center rounded-md border border-dashed text-sm",
-        local.class
-      )}
+      class={cn("cn-context-menu-trigger select-none", local.class)}
       data-slot="context-menu-trigger"
       {...others}
     />
@@ -48,7 +46,7 @@ const ContextMenuContent = <T extends ValidComponent = "div">(
     <ContextMenuPrimitive.Portal>
       <ContextMenuPrimitive.Content
         class={cn(
-          "data-[expanded]:fade-in-0 data-[expanded]:zoom-in-95 z-50 max-h-(--kb-popper-content-available-height) min-w-[8rem] origin-(--kb-menu-content-transform-origin) overflow-y-auto overflow-x-hidden rounded-md border bg-popover p-1 text-popover-foreground shadow-md data-[expanded]:animate-in",
+          "cn-context-menu-content cn-menu-target z-50 max-h-(--radix-context-menu-content-available-height) origin-(--radix-context-menu-content-transform-origin) overflow-y-auto overflow-x-hidden",
           local.class
         )}
         data-slot="context-menu-content"
@@ -76,7 +74,7 @@ const ContextMenuItem = <T extends ValidComponent = "div">(
   return (
     <ContextMenuPrimitive.Item
       class={cn(
-        "data-[variant=destructive]:*:[svg]:!text-destructive relative flex cursor-default select-none items-center gap-2 rounded-sm px-2 py-1.5 text-sm outline-hidden focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[inset]:pl-8 data-[variant=destructive]:text-destructive data-[disabled]:opacity-50 data-[variant=destructive]:focus:bg-destructive/10 data-[variant=destructive]:focus:text-destructive dark:data-[variant=destructive]:focus:bg-destructive/20 [&_svg:not([class*='size-'])]:size-4 [&_svg:not([class*='text-'])]:text-muted-foreground [&_svg]:pointer-events-none [&_svg]:shrink-0",
+        "cn-context-menu-item group/context-menu-item relative flex cursor-default select-none items-center outline-hidden data-[disabled]:pointer-events-none data-[inset]:pl-8 data-[disabled]:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0",
         local.class
       )}
       data-slot="context-menu-item"
@@ -90,7 +88,7 @@ const ContextMenuShortcut: Component<ComponentProps<"span">> = (props) => {
   const [local, others] = splitProps(props, ["class"])
   return (
     <span
-      class={cn("ml-auto text-muted-foreground text-xs tracking-widest", local.class)}
+      class={cn("cn-context-menu-shortcut", local.class)}
       data-slot="context-menu-shortcut"
       {...others}
     />
@@ -101,7 +99,7 @@ const ContextMenuLabel: Component<ComponentProps<"div"> & { inset?: boolean }> =
   const [local, others] = splitProps(props, ["class", "inset"])
   return (
     <div
-      class={cn("px-2 py-1.5 font-medium text-sm data-[inset]:pl-8", local.class)}
+      class={cn("cn-context-menu-label data-[inset]:pl-8", local.class)}
       data-inset={local.inset}
       data-slot="context-menu-label"
       {...others}
@@ -120,7 +118,7 @@ const ContextMenuSeparator = <T extends ValidComponent = "hr">(
   const [local, others] = splitProps(props as ContextMenuSeparatorProps, ["class"])
   return (
     <ContextMenuPrimitive.Separator
-      class={cn("-mx-1 my-1 h-px bg-border", local.class)}
+      class={cn("cn-context-menu-separator", local.class)}
       data-slot="context-menu-separator"
       {...others}
     />
@@ -144,25 +142,14 @@ const ContextMenuSubTrigger = <T extends ValidComponent = "div">(
   return (
     <ContextMenuPrimitive.SubTrigger
       class={cn(
-        "flex cursor-default select-none items-center gap-2 rounded-sm px-2 py-1.5 text-sm outline-hidden focus:bg-accent focus:text-accent-foreground data-[expanded]:bg-accent data-[inset]:pl-8 data-[expanded]:text-accent-foreground [&_svg:not([class*='size-'])]:size-4 [&_svg:not([class*='text-'])]:text-muted-foreground [&_svg]:pointer-events-none [&_svg]:shrink-0",
+        "cn-context-menu-sub-trigger flex cursor-default select-none items-center justify-between outline-hidden data-[inset]:pl-8 [&_svg]:pointer-events-none [&_svg]:shrink-0",
         local.class
       )}
       data-slot="context-menu-sub-trigger"
       {...others}
     >
       {local.children}
-      <svg
-        class="ml-auto size-4"
-        fill="none"
-        stroke="currentColor"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        stroke-width="2"
-        viewBox="0 0 24 24"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path d="M9 6l6 6l-6 6" />
-      </svg>
+      <ChevronRight />
     </ContextMenuPrimitive.SubTrigger>
   )
 }
@@ -179,7 +166,7 @@ const ContextMenuSubContent = <T extends ValidComponent = "div">(
   return (
     <ContextMenuPrimitive.SubContent
       class={cn(
-        "data-[expanded]:fade-in-0 data-[expanded]:zoom-in-95 z-50 min-w-[8rem] origin-(--kb-menu-content-transform-origin) overflow-hidden rounded-md border bg-popover p-1 text-popover-foreground shadow-lg data-[expanded]:animate-in",
+        "cn-context-menu-sub-content cn-menu-target z-50 origin-(--radix-context-menu-content-transform-origin) overflow-hidden",
         local.class
       )}
       data-slot="context-menu-sub-content"
@@ -201,26 +188,15 @@ const ContextMenuCheckboxItem = <T extends ValidComponent = "div">(
   return (
     <ContextMenuPrimitive.CheckboxItem
       class={cn(
-        "relative flex cursor-default select-none items-center gap-2 rounded-sm py-1.5 pr-2 pl-8 text-sm outline-hidden focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50 [&_svg:not([class*='size-'])]:size-4 [&_svg]:pointer-events-none [&_svg]:shrink-0",
+        "cn-context-menu-checkbox-item relative flex cursor-default select-none items-center outline-hidden data-[disabled]:pointer-events-none data-[disabled]:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0",
         local.class
       )}
       data-slot="context-menu-checkbox-item"
       {...others}
     >
-      <span class="pointer-events-none absolute left-2 flex size-3.5 items-center justify-center">
+      <span class="cn-context-menu-item-indicator pointer-events-none">
         <ContextMenuPrimitive.ItemIndicator>
-          <svg
-            class="size-4"
-            fill="none"
-            stroke="currentColor"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path d="M5 12l5 5l10 -10" />
-          </svg>
+          <CheckIcon />
         </ContextMenuPrimitive.ItemIndicator>
       </span>
       {local.children}
@@ -268,26 +244,15 @@ const ContextMenuRadioItem = <T extends ValidComponent = "div">(
   return (
     <ContextMenuPrimitive.RadioItem
       class={cn(
-        "relative flex cursor-default select-none items-center gap-2 rounded-sm py-1.5 pr-2 pl-8 text-sm outline-hidden focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50 [&_svg:not([class*='size-'])]:size-4 [&_svg]:pointer-events-none [&_svg]:shrink-0",
+        "cn-context-menu-radio-item relative flex cursor-default select-none items-center outline-hidden data-[disabled]:pointer-events-none data-[disabled]:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0",
         local.class
       )}
       data-slot="context-menu-radio-item"
       {...others}
     >
-      <span class="pointer-events-none absolute left-2 flex size-3.5 items-center justify-center">
+      <span class="cn-context-menu-item-indicator pointer-events-none">
         <ContextMenuPrimitive.ItemIndicator>
-          <svg
-            class="size-2 fill-current"
-            fill="none"
-            stroke="currentColor"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" />
-          </svg>
+          <Check />
         </ContextMenuPrimitive.ItemIndicator>
       </span>
       {local.children}
