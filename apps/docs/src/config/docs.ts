@@ -64,6 +64,10 @@ export const docsConfig: Config = {
           href: "/docs/components/input-group"
         },
         {
+          title: "Navigation Menu",
+          href: "/docs/components/navigation-menu"
+        },
+        {
           title: "Radio Group",
           href: "/docs/components/radio-group"
         },

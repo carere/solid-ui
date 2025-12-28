@@ -1,0 +1,95 @@
+---
+title: Navigation Menu
+description: A collection of links for navigating websites.
+links:
+  doc: https://kobalte.dev/docs/core/components/navigation-menu
+  api: https://kobalte.dev/docs/core/components/navigation-menu#api-reference
+---
+
+::::tab-group[preview]
+:::tab[Preview]
+
+<ComponentPreview name="navigation-menu-demo" />
+
+:::
+:::tab[Code]
+
+```file="~/registry/examples/navigation-menu-demo" frame=none showLineNumbers
+
+```
+
+:::
+::::
+
+## Installation
+
+### CLI
+
+```package-exec
+solidui-cli@latest add navigation-menu
+```
+
+### Manual
+
+Install the following dependencies:
+
+```package-install
+@kobalte/core
+```
+
+Copy and paste the following code into your project.
+
+```file="~/registry/ui/navigation-menu.tsx" showLineNumbers
+
+```
+
+## Usage
+
+```tsx
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuItemDescription,
+  NavigationMenuItemLabel,
+  NavigationMenuLink,
+  NavigationMenuMenu,
+  NavigationMenuTrigger,
+} from "~/components/ui/navigation-menu";
+```
+
+```tsx showLineNumbers
+<NavigationMenu>
+  <NavigationMenuMenu>
+    <NavigationMenuTrigger>Item One</NavigationMenuTrigger>
+    <NavigationMenuContent>
+      <NavigationMenuLink href="/docs">Link</NavigationMenuLink>
+    </NavigationMenuContent>
+  </NavigationMenuMenu>
+</NavigationMenu>
+```
+
+## Examples
+
+### Link Component
+
+When using the `as` prop you need to import the `NavigationMenuLink` and apply the `navigationMenuTriggerStyle()` to the link component.
+
+```tsx showLineNumbers
+import { A } from "@solidjs/router";
+
+import {
+  NavigationMenu,
+  NavigationMenuLink,
+  NavigationMenuMenu,
+  navigationMenuTriggerStyle,
+} from "~/components/ui/navigation-menu";
+```
+
+```tsx showLineNumbers
+<NavigationMenuMenu>
+  <NavigationMenuLink as={A} href="/docs" class={navigationMenuTriggerStyle()}>
+    Documentation
+  </NavigationMenuLink>
+</NavigationMenuMenu>
+```
