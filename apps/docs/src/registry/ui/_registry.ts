@@ -143,5 +143,16 @@ export const ui: Registry["items"] = [
         type: "registry:ui"
       }
     ]
+  },
+  {
+    name: "hover-card",
+    type: "registry:ui",
+    dependencies: ["@kobalte/core"],
+    files: [
+      {
+        path: "ui/hover-card.tsx",
+        type: "registry:ui"
+      }
+    ]
   }
 ]

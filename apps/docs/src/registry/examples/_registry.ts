@@ -418,5 +418,16 @@ export const examples: Registry["items"] = [
         type: "registry:example"
       }
     ]
+  },
+  {
+    name: "hover-card-demo",
+    type: "registry:example",
+    registryDependencies: ["hover-card", "avatar", "button"],
+    files: [
+      {
+        path: "examples/hover-card-demo.tsx",
+        type: "registry:example"
+      }
+    ]
   }
 ]

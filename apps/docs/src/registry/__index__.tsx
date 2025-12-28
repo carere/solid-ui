@@ -200,6 +200,20 @@ export const Index: Record<string, any> = {
     categories: undefined,
     meta: undefined,
   },
+  "hover-card": {
+    name: "hover-card",
+    description: "",
+    type: "registry:ui",
+    registryDependencies: undefined,
+    component: lazy(() => import("~/registry/ui/hover-card.tsx")),
+    files: [{
+      path: "registry/ui/hover-card.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    categories: undefined,
+    meta: undefined,
+  },
   "use-mobile": {
     name: "use-mobile",
     description: "",
@@ -740,6 +754,20 @@ export const Index: Record<string, any> = {
     component: lazy(() => import("~/registry/examples/tooltip-demo.tsx")),
     files: [{
       path: "registry/examples/tooltip-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    categories: undefined,
+    meta: undefined,
+  },
+  "hover-card-demo": {
+    name: "hover-card-demo",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["hover-card","avatar","button"],
+    component: lazy(() => import("~/registry/examples/hover-card-demo.tsx")),
+    files: [{
+      path: "registry/examples/hover-card-demo.tsx",
       type: "registry:example",
       target: ""
     }],
