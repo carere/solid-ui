@@ -3,6 +3,7 @@ import { mergeProps, splitProps } from "solid-js"
 
 import * as DropdownMenuPrimitive from "@kobalte/core/dropdown-menu"
 import type { PolymorphicProps } from "@kobalte/core/polymorphic"
+import { Check, ChevronRight, Dot } from "lucide-solid"
 
 import { cn } from "~/lib/utils"
 
@@ -53,40 +54,36 @@ const DropdownMenuItem = <T extends ValidComponent = "div">(
   rawProps: PolymorphicProps<T, DropdownMenuItemProps<T>>
 ) => {
   const props = mergeProps({ variant: "default" }, rawProps)
-  const [local, others] = splitProps(props as DropdownMenuItemProps, [
-    "class",
-    "inset",
-    "variant"
-  ])
+  const [local, others] = splitProps(props as DropdownMenuItemProps, ["class", "inset", "variant"])
   return (
     <DropdownMenuPrimitive.Item
       class={cn(
-        "cn-dropdown-menu-item group/dropdown-menu-item relative flex cursor-default items-center outline-hidden select-none data-disabled:pointer-events-none data-disabled:opacity-50 data-[inset]:pl-8 [&_svg]:pointer-events-none [&_svg]:shrink-0",
+        "cn-dropdown-menu-item group/dropdown-menu-item relative flex cursor-default select-none items-center outline-hidden data-disabled:pointer-events-none data-[inset]:pl-8 data-disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0",
         local.class
       )}
-      data-slot="dropdown-menu-item"
       data-inset={local.inset}
+      data-slot="dropdown-menu-item"
       data-variant={local.variant}
       {...others}
     />
   )
 }
 
-type DropdownMenuLabelProps<T extends ValidComponent = "span"> =
+type DropdownMenuGroupLabelProps<T extends ValidComponent = "span"> =
   DropdownMenuPrimitive.DropdownMenuGroupLabelProps<T> & {
     class?: string | undefined
     inset?: boolean
   }
 
-const DropdownMenuLabel = <T extends ValidComponent = "span">(
-  props: PolymorphicProps<T, DropdownMenuLabelProps<T>>
+const DropdownMenuGroupLabel = <T extends ValidComponent = "span">(
+  props: PolymorphicProps<T, DropdownMenuGroupLabelProps<T>>
 ) => {
-  const [local, others] = splitProps(props as DropdownMenuLabelProps, ["class", "inset"])
+  const [local, others] = splitProps(props as DropdownMenuGroupLabelProps, ["class", "inset"])
   return (
     <DropdownMenuPrimitive.GroupLabel
       class={cn("cn-dropdown-menu-label data-[inset]:pl-8", local.class)}
-      data-slot="dropdown-menu-label"
       data-inset={local.inset}
+      data-slot="dropdown-menu-label"
       {...others}
     />
   )
@@ -143,26 +140,15 @@ const DropdownMenuSubTrigger = <T extends ValidComponent = "div">(
   return (
     <DropdownMenuPrimitive.SubTrigger
       class={cn(
-        "cn-dropdown-menu-sub-trigger flex cursor-default items-center outline-hidden select-none data-[inset]:pl-8 [&_svg]:pointer-events-none [&_svg]:shrink-0",
+        "cn-dropdown-menu-sub-trigger flex cursor-default select-none items-center outline-hidden data-[inset]:pl-8 [&_svg]:pointer-events-none [&_svg]:shrink-0",
         local.class
       )}
-      data-slot="dropdown-menu-sub-trigger"
       data-inset={local.inset}
+      data-slot="dropdown-menu-sub-trigger"
       {...others}
     >
       {local.children}
-      <svg
-        class="ml-auto size-4"
-        fill="none"
-        stroke="currentColor"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        stroke-width="2"
-        viewBox="0 0 24 24"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path d="M9 6l6 6l-6 6" />
-      </svg>
+      <ChevronRight />
     </DropdownMenuPrimitive.SubTrigger>
   )
 }
@@ -198,7 +184,7 @@ const DropdownMenuCheckboxItem = <T extends ValidComponent = "div">(
   return (
     <DropdownMenuPrimitive.CheckboxItem
       class={cn(
-        "cn-dropdown-menu-checkbox-item relative flex cursor-default items-center outline-hidden select-none data-[disabled]:pointer-events-none data-[disabled]:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0",
+        "cn-dropdown-menu-checkbox-item relative flex cursor-default select-none items-center outline-hidden data-[disabled]:pointer-events-none data-[disabled]:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0",
         local.class
       )}
       data-slot="dropdown-menu-checkbox-item"
@@ -209,18 +195,7 @@ const DropdownMenuCheckboxItem = <T extends ValidComponent = "div">(
         data-slot="dropdown-menu-checkbox-item-indicator"
       >
         <DropdownMenuPrimitive.ItemIndicator>
-          <svg
-            class="size-4"
-            fill="none"
-            stroke="currentColor"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path d="M5 12l5 5l10 -10" />
-          </svg>
+          <Check />
         </DropdownMenuPrimitive.ItemIndicator>
       </span>
       {local.children}
@@ -250,31 +225,18 @@ const DropdownMenuRadioItem = <T extends ValidComponent = "div">(
   return (
     <DropdownMenuPrimitive.RadioItem
       class={cn(
-        "cn-dropdown-menu-radio-item relative flex cursor-default items-center outline-hidden select-none data-[disabled]:pointer-events-none data-[disabled]:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0",
+        "cn-dropdown-menu-radio-item relative flex cursor-default select-none items-center outline-hidden data-[disabled]:pointer-events-none data-[disabled]:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0",
         local.class
       )}
       data-slot="dropdown-menu-radio-item"
       {...others}
     >
-      <span
+      <DropdownMenuPrimitive.ItemIndicator
         class="cn-dropdown-menu-item-indicator pointer-events-none"
-        data-slot="dropdown-menu-radio-item-indicator"
+        data-slot="dropdown-menu-checkbox-item-indicator"
       >
-        <DropdownMenuPrimitive.ItemIndicator>
-          <svg
-            class="size-4"
-            fill="none"
-            stroke="currentColor"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path d="M5 12l5 5l10 -10" />
-          </svg>
-        </DropdownMenuPrimitive.ItemIndicator>
-      </span>
+        <Dot />
+      </DropdownMenuPrimitive.ItemIndicator>
       {local.children}
     </DropdownMenuPrimitive.RadioItem>
   )
@@ -287,7 +249,7 @@ export {
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuShortcut,
-  DropdownMenuLabel,
+  DropdownMenuGroupLabel,
   DropdownMenuSeparator,
   DropdownMenuSub,
   DropdownMenuSubTrigger,
