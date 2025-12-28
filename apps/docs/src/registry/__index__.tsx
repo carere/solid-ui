@@ -88,6 +88,20 @@ export const Index: Record<string, any> = {
     categories: undefined,
     meta: undefined,
   },
+  "drawer": {
+    name: "drawer",
+    description: "",
+    type: "registry:ui",
+    registryDependencies: undefined,
+    component: lazy(() => import("~/registry/ui/drawer.tsx")),
+    files: [{
+      path: "registry/ui/drawer.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    categories: undefined,
+    meta: undefined,
+  },
   "dropdown-menu": {
     name: "dropdown-menu",
     description: "",
@@ -446,6 +460,34 @@ export const Index: Record<string, any> = {
     component: lazy(() => import("~/registry/examples/checkbox-demo.tsx")),
     files: [{
       path: "registry/examples/checkbox-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    categories: undefined,
+    meta: undefined,
+  },
+  "drawer-demo": {
+    name: "drawer-demo",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["drawer","button"],
+    component: lazy(() => import("~/registry/examples/drawer-demo.tsx")),
+    files: [{
+      path: "registry/examples/drawer-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    categories: undefined,
+    meta: undefined,
+  },
+  "drawer-dialog": {
+    name: "drawer-dialog",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["drawer","dialog","button","input","label"],
+    component: lazy(() => import("~/registry/examples/drawer-dialog.tsx")),
+    files: [{
+      path: "registry/examples/drawer-dialog.tsx",
       type: "registry:example",
       target: ""
     }],

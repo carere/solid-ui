@@ -331,6 +331,23 @@ export function IconPlus(props: ComponentProps<"svg">) {
   )
 }
 
+export function IconMinus(props: ComponentProps<"svg">) {
+  return (
+    <svg
+      fill="none"
+      stroke="currentColor"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      stroke-width="2"
+      viewBox="0 0 24 24"
+      xmlns="http://www.w3.org/2000/svg"
+      {...props}
+    >
+      <path d="M5 12l14 0" />
+    </svg>
+  )
+}
+
 export function IconSearch(props: ComponentProps<"svg">) {
   return (
     <svg

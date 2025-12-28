@@ -1,0 +1,156 @@
+---
+title: Drawer
+description: A drawer component for SolidJS that extends the Dialog component with drag to close functionality.
+links:
+  doc: https://corvu.dev/docs/primitives/drawer
+  api: https://corvu.dev/docs/primitives/drawer#api-reference
+---
+
+::::tab-group[preview]
+:::tab[Preview]
+
+<ComponentPreview name="drawer-demo" />
+
+:::
+:::tab[Code]
+
+```file="~/registry/examples/drawer-demo" frame=none showLineNumbers
+
+```
+
+:::
+::::
+
+## Installation
+
+### CLI
+
+```package-exec
+solidui-cli@latest add drawer
+```
+
+### Manual
+
+Install the following dependencies:
+
+```package-install
+@corvu/drawer
+```
+
+Copy and paste the following code into your project.
+
+```file="~/registry/ui/drawer.tsx" showLineNumbers
+
+```
+
+## Usage
+
+```tsx
+import {
+  Drawer,
+  DrawerClose,
+  DrawerContent,
+  DrawerDescription,
+  DrawerFooter,
+  DrawerHeader,
+  DrawerTitle,
+  DrawerTrigger
+} from "~/components/ui/drawer";
+```
+
+```tsx showLineNumbers
+<Drawer>
+  <DrawerTrigger>Open</DrawerTrigger>
+  <DrawerContent>
+    <DrawerHeader>
+      <DrawerTitle>Are you absolutely sure?</DrawerTitle>
+      <DrawerDescription>This action cannot be undone.</DrawerDescription>
+    </DrawerHeader>
+    <DrawerFooter>
+      <Button>Submit</Button>
+      <DrawerClose>
+        <Button variant="outline">Cancel</Button>
+      </DrawerClose>
+    </DrawerFooter>
+  </DrawerContent>
+</Drawer>
+```
+
+## Examples
+
+### Responsive Dialog
+
+Combine a `Dialog` and `Drawer` to create a responsive dialog. This uses the `useIsMobile` hook to conditionally render the appropriate component.
+
+::::tab-group[responsive]
+:::tab[Preview]
+
+<ComponentPreview name="drawer-dialog" />
+
+:::
+:::tab[Code]
+
+```file="~/registry/examples/drawer-dialog" frame=none showLineNumbers
+
+```
+
+:::
+::::
+
+## Direction
+
+You can set the `side` prop to `top`, `right`, `bottom`, or `left` to change the direction of the drawer.
+
+```tsx showLineNumbers
+<Drawer side="right">
+  <DrawerTrigger>Open</DrawerTrigger>
+  <DrawerContent>
+    <DrawerHeader>
+      <DrawerTitle>Right Drawer</DrawerTitle>
+      <DrawerDescription>This drawer opens from the right.</DrawerDescription>
+    </DrawerHeader>
+  </DrawerContent>
+</Drawer>
+```
+
+## API Reference
+
+### Drawer
+
+The root component that provides context for the drawer.
+
+| Prop | Type | Default | Description |
+| --- | --- | --- | --- |
+| `side` | `"top" \| "right" \| "bottom" \| "left"` | `"bottom"` | The side from which the drawer opens |
+| `open` | `boolean` | - | Controlled open state |
+| `onOpenChange` | `(open: boolean) => void` | - | Callback when open state changes |
+| `snapPoints` | `number[]` | `[0, 1]` | Snap points for the drawer |
+| `defaultSnapPoint` | `number` | `1` | Initial snap point on open |
+
+### DrawerContent
+
+The content area of the drawer.
+
+### DrawerHeader
+
+The header section of the drawer.
+
+### DrawerFooter
+
+The footer section of the drawer.
+
+### DrawerTitle
+
+The title text of the drawer.
+
+### DrawerDescription
+
+The description text of the drawer.
+
+### DrawerTrigger
+
+The button that opens the drawer.
+
+### DrawerClose
+
+The button that closes the drawer.
