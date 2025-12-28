@@ -476,6 +476,17 @@ export const examples: Registry["items"] = [
     ]
   },
   {
+    name: "context-menu-checkboxes",
+    type: "registry:example",
+    registryDependencies: ["context-menu"],
+    files: [
+      {
+        path: "examples/context-menu-checkboxes.tsx",
+        type: "registry:example"
+      }
+    ]
+  },
+  {
     name: "dialog-demo",
     type: "registry:example",
     registryDependencies: ["dialog", "button", "field", "input"],
@@ -487,12 +498,34 @@ export const examples: Registry["items"] = [
     ]
   },
   {
+    name: "context-menu-demo",
+    type: "registry:example",
+    registryDependencies: ["context-menu"],
+    files: [
+      {
+        path: "examples/context-menu-demo.tsx",
+        type: "registry:example"
+      }
+    ]
+  },
+  {
     name: "dialog-close-button",
     type: "registry:example",
     registryDependencies: ["dialog", "button"],
     files: [
       {
         path: "examples/dialog-close-button.tsx",
+        type: "registry:example"
+      }
+    ]
+  },
+  {
+    name: "context-menu-radio-group",
+    type: "registry:example",
+    registryDependencies: ["context-menu"],
+    files: [
+      {
+        path: "examples/context-menu-radio-group.tsx",
         type: "registry:example"
       }
     ]
