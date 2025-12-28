@@ -29,6 +29,9 @@ importers:
       '@corvu/drawer':
         specifier: ^0.2.4
         version: 0.2.4(solid-js@1.9.9)
+      '@corvu/otp-field':
+        specifier: ^0.1.4
+        version: 0.1.4(solid-js@1.9.9)
       '@fontsource-variable/geist':
         specifier: ^5.2.8
         version: 5.2.8
@@ -1208,6 +1211,15 @@ packages:
       '@solid-primitives/memo': 1.4.3(solid-js@1.9.9)
       solid-js: 1.9.9
       solid-transition-size: 0.1.4(solid-js@1.9.9)
+    dev: false
+
+  /@corvu/otp-field@0.1.4(solid-js@1.9.9):
+    resolution: {integrity: sha512-3eG7OoUt6CfVqGujIYfqImdrhGR/s4DpKr5ZQT10zzw3nawIlcwVpqoHTam0v4cgv+NXXvl6I8DoA3J+WgW2YA==}
+    peerDependencies:
+      solid-js: ^1.8
+    dependencies:
+      '@corvu/utils': 0.4.2(solid-js@1.9.9)
+      solid-js: 1.9.9
     dev: false
 
   /@corvu/utils@0.3.2(solid-js@1.9.9):

@@ -101,6 +101,17 @@ export const ui: Registry["items"] = [
     ]
   },
   {
+    name: "input-otp",
+    type: "registry:ui",
+    dependencies: ["@corvu/otp-field"],
+    files: [
+      {
+        path: "ui/input-otp.tsx",
+        type: "registry:ui"
+      }
+    ]
+  },
+  {
     name: "radio-group",
     type: "registry:ui",
     dependencies: ["@kobalte/core"],

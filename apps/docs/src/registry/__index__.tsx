@@ -144,6 +144,20 @@ export const Index: Record<string, any> = {
     categories: undefined,
     meta: undefined,
   },
+  "input-otp": {
+    name: "input-otp",
+    description: "",
+    type: "registry:ui",
+    registryDependencies: undefined,
+    component: lazy(() => import("~/registry/ui/input-otp.tsx")),
+    files: [{
+      path: "registry/ui/input-otp.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    categories: undefined,
+    meta: undefined,
+  },
   "radio-group": {
     name: "radio-group",
     description: "",
@@ -670,6 +684,62 @@ export const Index: Record<string, any> = {
     component: lazy(() => import("~/registry/examples/input-group-demo.tsx")),
     files: [{
       path: "registry/examples/input-group-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    categories: undefined,
+    meta: undefined,
+  },
+  "input-otp-demo": {
+    name: "input-otp-demo",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["input-otp"],
+    component: lazy(() => import("~/registry/examples/input-otp-demo.tsx")),
+    files: [{
+      path: "registry/examples/input-otp-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    categories: undefined,
+    meta: undefined,
+  },
+  "input-otp-pattern": {
+    name: "input-otp-pattern",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["input-otp"],
+    component: lazy(() => import("~/registry/examples/input-otp-pattern.tsx")),
+    files: [{
+      path: "registry/examples/input-otp-pattern.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    categories: undefined,
+    meta: undefined,
+  },
+  "input-otp-separator": {
+    name: "input-otp-separator",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["input-otp"],
+    component: lazy(() => import("~/registry/examples/input-otp-separator.tsx")),
+    files: [{
+      path: "registry/examples/input-otp-separator.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    categories: undefined,
+    meta: undefined,
+  },
+  "input-otp-controlled": {
+    name: "input-otp-controlled",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["input-otp"],
+    component: lazy(() => import("~/registry/examples/input-otp-controlled.tsx")),
+    files: [{
+      path: "registry/examples/input-otp-controlled.tsx",
       type: "registry:example",
       target: ""
     }],

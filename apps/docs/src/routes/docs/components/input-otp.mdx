@@ -1,0 +1,130 @@
+---
+title: Input OTP
+description: Accessible one-time password component with copy paste functionality.
+links:
+  doc: https://corvu.dev/docs/primitives/otp-field/
+  api: https://corvu.dev/docs/primitives/otp-field/#api-reference
+---
+
+::::tab-group[preview]
+:::tab[Preview]
+
+<ComponentPreview name="input-otp-demo" />
+
+:::
+:::tab[Code]
+
+```file="~/registry/examples/input-otp-demo" frame=none showLineNumbers
+
+```
+
+:::
+::::
+
+## Installation
+
+### CLI
+
+```package-exec
+solidui-cli@latest add input-otp
+```
+
+### Manual
+
+Install the following dependencies:
+
+```package-install
+@corvu/otp-field
+```
+
+Copy and paste the following code into your project.
+
+```file="~/registry/ui/input-otp.tsx" showLineNumbers
+
+```
+
+## Usage
+
+```tsx
+import {
+  InputOTP,
+  InputOTPGroup,
+  InputOTPSeparator,
+  InputOTPSlot,
+} from "~/components/ui/input-otp";
+```
+
+```tsx showLineNumbers
+<InputOTP maxLength={6}>
+  <InputOTPGroup>
+    <InputOTPSlot index={0} />
+    <InputOTPSlot index={1} />
+    <InputOTPSlot index={2} />
+  </InputOTPGroup>
+  <InputOTPSeparator />
+  <InputOTPGroup>
+    <InputOTPSlot index={3} />
+    <InputOTPSlot index={4} />
+    <InputOTPSlot index={5} />
+  </InputOTPGroup>
+</InputOTP>
+```
+
+## Examples
+
+### Pattern
+
+Use the `pattern` prop on the `OtpField.Input` to define a custom pattern for input validation.
+
+::::tab-group[pattern]
+:::tab[Preview]
+
+<ComponentPreview name="input-otp-pattern" />
+
+:::
+:::tab[Code]
+
+```file="~/registry/examples/input-otp-pattern" frame=none showLineNumbers
+
+```
+
+:::
+::::
+
+### Separator
+
+You can use the `<InputOTPSeparator />` component to add a separator between the input groups.
+
+::::tab-group[separator]
+:::tab[Preview]
+
+<ComponentPreview name="input-otp-separator" />
+
+:::
+:::tab[Code]
+
+```file="~/registry/examples/input-otp-separator" frame=none showLineNumbers
+
+```
+
+:::
+::::
+
+### Controlled
+
+You can use the `value` and `onValueChange` props to control the input value.
+
+::::tab-group[controlled]
+:::tab[Preview]
+
+<ComponentPreview name="input-otp-controlled" />
+
+:::
+:::tab[Code]
+
+```file="~/registry/examples/input-otp-controlled" frame=none showLineNumbers
+
+```
+
+:::
+::::
