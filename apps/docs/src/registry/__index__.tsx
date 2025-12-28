@@ -200,6 +200,20 @@ export const Index: Record<string, any> = {
     categories: undefined,
     meta: undefined,
   },
+  "empty": {
+    name: "empty",
+    description: "",
+    type: "registry:ui",
+    registryDependencies: undefined,
+    component: lazy(() => import("~/registry/ui/empty.tsx")),
+    files: [{
+      path: "registry/ui/empty.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    categories: undefined,
+    meta: undefined,
+  },
   "use-mobile": {
     name: "use-mobile",
     description: "",
@@ -740,6 +754,48 @@ export const Index: Record<string, any> = {
     component: lazy(() => import("~/registry/examples/tooltip-demo.tsx")),
     files: [{
       path: "registry/examples/tooltip-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    categories: undefined,
+    meta: undefined,
+  },
+  "empty-demo": {
+    name: "empty-demo",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["empty","button"],
+    component: lazy(() => import("~/registry/examples/empty-demo.tsx")),
+    files: [{
+      path: "registry/examples/empty-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    categories: undefined,
+    meta: undefined,
+  },
+  "empty-outline": {
+    name: "empty-outline",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["empty","button"],
+    component: lazy(() => import("~/registry/examples/empty-outline.tsx")),
+    files: [{
+      path: "registry/examples/empty-outline.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    categories: undefined,
+    meta: undefined,
+  },
+  "empty-muted": {
+    name: "empty-muted",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["empty","button"],
+    component: lazy(() => import("~/registry/examples/empty-muted.tsx")),
+    files: [{
+      path: "registry/examples/empty-muted.tsx",
       type: "registry:example",
       target: ""
     }],

@@ -418,5 +418,38 @@ export const examples: Registry["items"] = [
         type: "registry:example"
       }
     ]
+  },
+  {
+    name: "empty-demo",
+    type: "registry:example",
+    registryDependencies: ["empty", "button"],
+    files: [
+      {
+        path: "examples/empty-demo.tsx",
+        type: "registry:example"
+      }
+    ]
+  },
+  {
+    name: "empty-outline",
+    type: "registry:example",
+    registryDependencies: ["empty", "button"],
+    files: [
+      {
+        path: "examples/empty-outline.tsx",
+        type: "registry:example"
+      }
+    ]
+  },
+  {
+    name: "empty-muted",
+    type: "registry:example",
+    registryDependencies: ["empty", "button"],
+    files: [
+      {
+        path: "examples/empty-muted.tsx",
+        type: "registry:example"
+      }
+    ]
   }
 ]
