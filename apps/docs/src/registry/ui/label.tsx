@@ -8,7 +8,7 @@ const Label: Component<ComponentProps<"label">> = (props) => {
   return (
     <label
       class={cn(
-        "cn-label flex select-none items-center peer-disabled:cursor-not-allowed group-data-[disabled=true]:pointer-events-none",
+        "cn-label flex select-none items-center peer-disabled:cursor-not-allowed group-data-disabled:pointer-events-none peer-data-disabled:cursor-not-allowed",
         local.class
       )}
       data-slot="label"
