@@ -3,8 +3,10 @@ import { mergeProps, Show, splitProps } from "solid-js"
 
 import * as DialogPrimitive from "@kobalte/core/dialog"
 import type { PolymorphicProps } from "@kobalte/core/polymorphic"
+import { X } from "lucide-solid"
 
 import { cn } from "~/lib/utils"
+import { Button } from "~/registry/ui/button"
 
 const Dialog: Component<DialogPrimitive.DialogRootProps> = (props) => (
   <DialogPrimitive.Root data-slot="dialog" {...props} />
@@ -59,7 +61,7 @@ const DialogContent = <T extends ValidComponent = "div">(
       <DialogOverlay />
       <DialogPrimitive.Content
         class={cn(
-          "cn-dialog-content fixed top-1/2 left-1/2 z-50 w-full -translate-x-1/2 -translate-y-1/2",
+          "cn-dialog-content -translate-x-1/2 -translate-y-1/2 fixed top-1/2 left-1/2 z-50 w-full",
           local.class
         )}
         data-slot="dialog-content"
@@ -68,22 +70,13 @@ const DialogContent = <T extends ValidComponent = "div">(
         {local.children}
         <Show when={local.showCloseButton}>
           <DialogPrimitive.CloseButton
+            as={Button}
             class="cn-dialog-close"
             data-slot="dialog-close"
+            size="icon"
+            variant="ghost"
           >
-            <svg
-              class="size-4"
-              fill="none"
-              stroke="currentColor"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path d="M18 6 6 18" />
-              <path d="m6 6 12 12" />
-            </svg>
+            <X />
             <span class="sr-only">Close</span>
           </DialogPrimitive.CloseButton>
         </Show>
@@ -92,11 +85,7 @@ const DialogContent = <T extends ValidComponent = "div">(
   )
 }
 
-type DialogHeaderProps = ComponentProps<"div"> & {
-  class?: string | undefined
-}
-
-const DialogHeader: Component<DialogHeaderProps> = (props) => {
+const DialogHeader: Component<ComponentProps<"div">> = (props) => {
   const [local, others] = splitProps(props, ["class"])
   return (
     <div
@@ -107,15 +96,8 @@ const DialogHeader: Component<DialogHeaderProps> = (props) => {
   )
 }
 
-type DialogFooterProps = ComponentProps<"div"> & {
-  class?: string | undefined
-  children?: JSX.Element
-  showCloseButton?: boolean
-}
-
-const DialogFooter: Component<DialogFooterProps> = (rawProps) => {
-  const props = mergeProps({ showCloseButton: false }, rawProps)
-  const [local, others] = splitProps(props, ["class", "children", "showCloseButton"])
+const DialogFooter: Component<ComponentProps<"div">> = (props) => {
+  const [local, others] = splitProps(props, ["class"])
   return (
     <div
       class={cn(
@@ -124,17 +106,7 @@ const DialogFooter: Component<DialogFooterProps> = (rawProps) => {
       )}
       data-slot="dialog-footer"
       {...others}
-    >
-      {local.children}
-      <Show when={local.showCloseButton}>
-        <DialogPrimitive.CloseButton
-          class="cn-button cn-button-variant-outline cn-button-size-default"
-          data-slot="button"
-        >
-          Close
-        </DialogPrimitive.CloseButton>
-      </Show>
-    </div>
+    />
   )
 }
 
@@ -175,13 +147,11 @@ const DialogDescription = <T extends ValidComponent = "p">(
 
 export {
   Dialog,
+  DialogTrigger,
   DialogClose,
   DialogContent,
-  DialogDescription,
-  DialogFooter,
   DialogHeader,
-  DialogOverlay,
-  DialogPortal,
+  DialogFooter,
   DialogTitle,
-  DialogTrigger
+  DialogDescription
 }
