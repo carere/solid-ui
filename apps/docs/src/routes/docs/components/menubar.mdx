@@ -1,0 +1,82 @@
+---
+title: Menubar
+description: A visually persistent menu common in desktop applications that provides quick access to a consistent set of commands.
+links:
+  doc: https://kobalte.dev/docs/core/components/menubar
+  api: https://kobalte.dev/docs/core/components/menubar#api-reference
+---
+
+::::tab-group[preview]
+:::tab[Preview]
+
+<ComponentPreview name="menubar-demo" />
+
+:::
+:::tab[Code]
+
+```file="~/registry/examples/menubar-demo" frame=none showLineNumbers
+
+```
+
+:::
+::::
+
+## Installation
+
+### CLI
+
+```package-exec
+solidui-cli@latest add menubar
+```
+
+### Manual
+
+Install the following dependencies:
+
+```package-install
+@kobalte/core
+```
+
+Copy and paste the following code into your project.
+
+```file="~/registry/ui/menubar.tsx" showLineNumbers
+
+```
+
+## Usage
+
+```tsx
+import {
+  Menubar,
+  MenubarCheckboxItem,
+  MenubarContent,
+  MenubarItem,
+  MenubarMenu,
+  MenubarRadioGroup,
+  MenubarRadioItem,
+  MenubarSeparator,
+  MenubarShortcut,
+  MenubarSub,
+  MenubarSubContent,
+  MenubarSubTrigger,
+  MenubarTrigger,
+} from "~/components/ui/menubar"
+```
+
+```tsx showLineNumbers
+<Menubar>
+  <MenubarMenu>
+    <MenubarTrigger>File</MenubarTrigger>
+    <MenubarContent>
+      <MenubarItem>
+        New Tab <MenubarShortcut>⌘T</MenubarShortcut>
+      </MenubarItem>
+      <MenubarItem>New Window</MenubarItem>
+      <MenubarSeparator />
+      <MenubarItem>Share</MenubarItem>
+      <MenubarSeparator />
+      <MenubarItem>Print</MenubarItem>
+    </MenubarContent>
+  </MenubarMenu>
+</Menubar>
+```

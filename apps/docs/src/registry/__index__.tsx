@@ -200,6 +200,20 @@ export const Index: Record<string, any> = {
     categories: undefined,
     meta: undefined,
   },
+  "menubar": {
+    name: "menubar",
+    description: "",
+    type: "registry:ui",
+    registryDependencies: undefined,
+    component: lazy(() => import("~/registry/ui/menubar.tsx")),
+    files: [{
+      path: "registry/ui/menubar.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    categories: undefined,
+    meta: undefined,
+  },
   "use-mobile": {
     name: "use-mobile",
     description: "",
@@ -740,6 +754,20 @@ export const Index: Record<string, any> = {
     component: lazy(() => import("~/registry/examples/tooltip-demo.tsx")),
     files: [{
       path: "registry/examples/tooltip-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    categories: undefined,
+    meta: undefined,
+  },
+  "menubar-demo": {
+    name: "menubar-demo",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["menubar"],
+    component: lazy(() => import("~/registry/examples/menubar-demo.tsx")),
+    files: [{
+      path: "registry/examples/menubar-demo.tsx",
       type: "registry:example",
       target: ""
     }],

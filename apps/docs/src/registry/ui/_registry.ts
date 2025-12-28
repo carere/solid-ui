@@ -143,5 +143,16 @@ export const ui: Registry["items"] = [
         type: "registry:ui"
       }
     ]
+  },
+  {
+    name: "menubar",
+    type: "registry:ui",
+    dependencies: ["@kobalte/core"],
+    files: [
+      {
+        path: "ui/menubar.tsx",
+        type: "registry:ui"
+      }
+    ]
   }
 ]

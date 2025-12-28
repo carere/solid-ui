@@ -418,5 +418,16 @@ export const examples: Registry["items"] = [
         type: "registry:example"
       }
     ]
+  },
+  {
+    name: "menubar-demo",
+    type: "registry:example",
+    registryDependencies: ["menubar"],
+    files: [
+      {
+        path: "examples/menubar-demo.tsx",
+        type: "registry:example"
+      }
+    ]
   }
 ]
