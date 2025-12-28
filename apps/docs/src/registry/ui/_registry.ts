@@ -143,5 +143,15 @@ export const ui: Registry["items"] = [
         type: "registry:ui"
       }
     ]
+  },
+  {
+    name: "kbd",
+    type: "registry:ui",
+    files: [
+      {
+        path: "ui/kbd.tsx",
+        type: "registry:ui"
+      }
+    ]
   }
 ]
