@@ -172,6 +172,20 @@ export const Index: Record<string, any> = {
     categories: undefined,
     meta: undefined,
   },
+  "sidebar": {
+    name: "sidebar",
+    description: "",
+    type: "registry:ui",
+    registryDependencies: ["button","input","separator","sheet","skeleton","tooltip"],
+    component: lazy(() => import("~/registry/ui/sidebar.tsx")),
+    files: [{
+      path: "registry/ui/sidebar.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    categories: undefined,
+    meta: undefined,
+  },
   "slider": {
     name: "slider",
     description: "",
@@ -698,6 +712,20 @@ export const Index: Record<string, any> = {
     component: lazy(() => import("~/registry/examples/select-demo.tsx")),
     files: [{
       path: "registry/examples/select-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    categories: undefined,
+    meta: undefined,
+  },
+  "sidebar-demo": {
+    name: "sidebar-demo",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["sidebar"],
+    component: lazy(() => import("~/registry/examples/sidebar-demo.tsx")),
+    files: [{
+      path: "registry/examples/sidebar-demo.tsx",
       type: "registry:example",
       target: ""
     }],

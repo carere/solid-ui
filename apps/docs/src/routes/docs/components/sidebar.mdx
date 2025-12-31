@@ -1,0 +1,196 @@
+---
+title: Sidebar
+description: A composable, themeable and customizable sidebar component.
+---
+
+::::tab-group[preview]
+:::tab[Preview]
+
+<ComponentPreview name="sidebar-demo" />
+
+:::
+:::tab[Code]
+
+```file="~/registry/examples/sidebar-demo" frame=none showLineNumbers
+
+```
+
+:::
+::::
+
+## Installation
+
+### CLI
+
+```package-exec
+solidui-cli@latest add sidebar
+```
+
+### Manual
+
+Install the following dependencies:
+
+```package-install
+@kobalte/core class-variance-authority
+```
+
+Copy and paste the following code into your project.
+
+```file="~/registry/ui/sidebar.tsx" showLineNumbers
+
+```
+
+## Usage
+
+```tsx
+import {
+  Sidebar,
+  SidebarContent,
+  SidebarFooter,
+  SidebarGroup,
+  SidebarGroupContent,
+  SidebarGroupLabel,
+  SidebarHeader,
+  SidebarMenu,
+  SidebarMenuButton,
+  SidebarMenuItem,
+  SidebarProvider,
+  SidebarTrigger
+} from "~/components/ui/sidebar";
+```
+
+```tsx showLineNumbers
+<SidebarProvider>
+  <Sidebar>
+    <SidebarHeader />
+    <SidebarContent>
+      <SidebarGroup>
+        <SidebarGroupLabel>Application</SidebarGroupLabel>
+        <SidebarGroupContent>
+          <SidebarMenu>
+            <SidebarMenuItem>
+              <SidebarMenuButton>
+                <span>Home</span>
+              </SidebarMenuButton>
+            </SidebarMenuItem>
+          </SidebarMenu>
+        </SidebarGroupContent>
+      </SidebarGroup>
+    </SidebarContent>
+    <SidebarFooter />
+  </Sidebar>
+  <main>
+    <SidebarTrigger />
+    {/* Your main content */}
+  </main>
+</SidebarProvider>
+```
+
+## Structure
+
+A `Sidebar` component is composed of the following parts:
+
+- `SidebarProvider` - Handles collapsible state.
+- `Sidebar` - The sidebar container.
+- `SidebarHeader` and `SidebarFooter` - Sticky at the top and bottom of the sidebar.
+- `SidebarContent` - Scrollable content.
+- `SidebarGroup` - Section within the `SidebarContent`.
+- `SidebarTrigger` - Trigger for the `Sidebar`.
+
+## useSidebar
+
+The `useSidebar` hook provides access to the sidebar state and actions:
+
+```tsx
+import { useSidebar } from "~/components/ui/sidebar";
+
+function MyComponent() {
+  const {
+    state,       // Accessor<"expanded" | "collapsed">
+    open,        // Accessor<boolean>
+    setOpen,     // (open: boolean) => void
+    openMobile,  // Accessor<boolean>
+    setOpenMobile, // (open: boolean) => void
+    isMobile,    // Accessor<boolean>
+    toggleSidebar // () => void
+  } = useSidebar();
+
+  return <div>Sidebar is {state()}</div>;
+}
+```
+
+## Collapsible
+
+The sidebar supports three collapsible modes:
+
+- `offcanvas` - The sidebar slides out of view when collapsed
+- `icon` - The sidebar collapses to show only icons
+- `none` - The sidebar cannot be collapsed
+
+```tsx
+<Sidebar collapsible="icon">
+  {/* content */}
+</Sidebar>
+```
+
+## Side
+
+Use the `side` prop to specify which side the sidebar appears on:
+
+```tsx
+<Sidebar side="right">
+  {/* content */}
+</Sidebar>
+```
+
+## Variant
+
+The sidebar supports three variants:
+
+- `sidebar` - Default sidebar variant
+- `floating` - Floating sidebar with rounded corners and shadow
+- `inset` - Inset sidebar with padding
+
+```tsx
+<Sidebar variant="floating">
+  {/* content */}
+</Sidebar>
+```
+
+## Keyboard Shortcut
+
+The sidebar can be toggled using the keyboard shortcut `Cmd+B` (Mac) or `Ctrl+B` (Windows/Linux).
+
+## API Reference
+
+### SidebarProvider
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `defaultOpen` | `boolean` | `true` |
+| `open` | `boolean` | - |
+| `onOpenChange` | `(open: boolean) => void` | - |
+
+### Sidebar
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `side` | `"left" \| "right"` | `"left"` |
+| `variant` | `"sidebar" \| "floating" \| "inset"` | `"sidebar"` |
+| `collapsible` | `"offcanvas" \| "icon" \| "none"` | `"offcanvas"` |
+
+### SidebarMenuButton
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `variant` | `"default" \| "outline"` | `"default"` |
+| `size` | `"default" \| "sm" \| "lg"` | `"default"` |
+| `isActive` | `boolean` | `false` |
+| `tooltip` | `string` | - |
+
+### SidebarMenuSubButton
+
+| Prop | Type | Default |
+| --- | --- | --- |
+| `size` | `"sm" \| "md"` | `"md"` |
+| `isActive` | `boolean` | `false` |

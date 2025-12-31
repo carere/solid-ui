@@ -123,6 +123,18 @@ export const ui: Registry["items"] = [
     ]
   },
   {
+    name: "sidebar",
+    type: "registry:ui",
+    dependencies: ["@kobalte/core", "class-variance-authority"],
+    registryDependencies: ["button", "input", "separator", "sheet", "skeleton", "tooltip"],
+    files: [
+      {
+        path: "ui/sidebar.tsx",
+        type: "registry:ui"
+      }
+    ]
+  },
+  {
     name: "slider",
     type: "registry:ui",
     dependencies: ["@kobalte/core"],

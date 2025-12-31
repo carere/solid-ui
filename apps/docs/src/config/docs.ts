@@ -72,6 +72,11 @@ export const docsConfig: Config = {
           href: "/docs/components/select"
         },
         {
+          title: "Sidebar",
+          href: "/docs/components/sidebar",
+          status: "new"
+        },
+        {
           title: "Slider",
           href: "/docs/components/slider"
         },
