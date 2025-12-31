@@ -354,6 +354,61 @@ export const examples: Registry["items"] = [
     ]
   },
   {
+    name: "input-demo",
+    type: "registry:example",
+    registryDependencies: ["input"],
+    files: [
+      {
+        path: "examples/input-demo.tsx",
+        type: "registry:example"
+      }
+    ]
+  },
+  {
+    name: "input-file",
+    type: "registry:example",
+    registryDependencies: ["input", "label"],
+    files: [
+      {
+        path: "examples/input-file.tsx",
+        type: "registry:example"
+      }
+    ]
+  },
+  {
+    name: "input-disabled",
+    type: "registry:example",
+    registryDependencies: ["input"],
+    files: [
+      {
+        path: "examples/input-disabled.tsx",
+        type: "registry:example"
+      }
+    ]
+  },
+  {
+    name: "input-with-label",
+    type: "registry:example",
+    registryDependencies: ["input", "label"],
+    files: [
+      {
+        path: "examples/input-with-label.tsx",
+        type: "registry:example"
+      }
+    ]
+  },
+  {
+    name: "input-with-button",
+    type: "registry:example",
+    registryDependencies: ["input", "button"],
+    files: [
+      {
+        path: "examples/input-with-button.tsx",
+        type: "registry:example"
+      }
+    ]
+  },
+  {
     name: "input-group-demo",
     type: "registry:example",
     registryDependencies: ["input-group"],

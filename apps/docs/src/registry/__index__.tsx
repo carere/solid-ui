@@ -662,6 +662,76 @@ export const Index: Record<string, any> = {
     categories: undefined,
     meta: undefined,
   },
+  "input-demo": {
+    name: "input-demo",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["input"],
+    component: lazy(() => import("~/registry/examples/input-demo.tsx")),
+    files: [{
+      path: "registry/examples/input-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    categories: undefined,
+    meta: undefined,
+  },
+  "input-file": {
+    name: "input-file",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["input","label"],
+    component: lazy(() => import("~/registry/examples/input-file.tsx")),
+    files: [{
+      path: "registry/examples/input-file.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    categories: undefined,
+    meta: undefined,
+  },
+  "input-disabled": {
+    name: "input-disabled",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["input"],
+    component: lazy(() => import("~/registry/examples/input-disabled.tsx")),
+    files: [{
+      path: "registry/examples/input-disabled.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    categories: undefined,
+    meta: undefined,
+  },
+  "input-with-label": {
+    name: "input-with-label",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["input","label"],
+    component: lazy(() => import("~/registry/examples/input-with-label.tsx")),
+    files: [{
+      path: "registry/examples/input-with-label.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    categories: undefined,
+    meta: undefined,
+  },
+  "input-with-button": {
+    name: "input-with-button",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["input","button"],
+    component: lazy(() => import("~/registry/examples/input-with-button.tsx")),
+    files: [{
+      path: "registry/examples/input-with-button.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    categories: undefined,
+    meta: undefined,
+  },
   "input-group-demo": {
     name: "input-group-demo",
     description: "",
