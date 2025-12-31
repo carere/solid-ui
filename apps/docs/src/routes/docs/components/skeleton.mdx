@@ -1,0 +1,75 @@
+---
+title: Skeleton
+description: Use to show a placeholder while content is loading.
+links:
+  doc: https://kobalte.dev/docs/core/components/skeleton
+  api: https://kobalte.dev/docs/core/components/skeleton#api-reference
+---
+
+::::tab-group[preview]
+:::tab[Preview]
+
+<ComponentPreview name="skeleton-demo" />
+
+:::
+:::tab[Code]
+
+```file="~/registry/examples/skeleton-demo" frame=none showLineNumbers
+
+```
+
+:::
+::::
+
+## Installation
+
+### CLI
+
+```package-exec
+solidui-cli@latest add skeleton
+```
+
+### Manual
+
+Install the following dependencies:
+
+```package-install
+@kobalte/core
+```
+
+Copy and paste the following code into your project.
+
+```file="~/registry/ui/skeleton.tsx" showLineNumbers
+
+```
+
+## Usage
+
+```tsx
+import { Skeleton } from "~/components/ui/skeleton";
+```
+
+```tsx showLineNumbers
+<Skeleton class="h-[20px] w-[100px] rounded-full" />
+```
+
+## Examples
+
+### Card
+
+Use skeleton to show a placeholder while a card is loading.
+
+::::tab-group[card]
+:::tab[Preview]
+
+<ComponentPreview name="skeleton-card" />
+
+:::
+:::tab[Code]
+
+```file="~/registry/examples/skeleton-card" frame=none showLineNumbers
+
+```
+
+:::
+::::

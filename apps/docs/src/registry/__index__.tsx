@@ -200,6 +200,20 @@ export const Index: Record<string, any> = {
     categories: undefined,
     meta: undefined,
   },
+  "skeleton": {
+    name: "skeleton",
+    description: "",
+    type: "registry:ui",
+    registryDependencies: undefined,
+    component: lazy(() => import("~/registry/ui/skeleton.tsx")),
+    files: [{
+      path: "registry/ui/skeleton.tsx",
+      type: "registry:ui",
+      target: ""
+    }],
+    categories: undefined,
+    meta: undefined,
+  },
   "use-mobile": {
     name: "use-mobile",
     description: "",
@@ -740,6 +754,34 @@ export const Index: Record<string, any> = {
     component: lazy(() => import("~/registry/examples/tooltip-demo.tsx")),
     files: [{
       path: "registry/examples/tooltip-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    categories: undefined,
+    meta: undefined,
+  },
+  "skeleton-demo": {
+    name: "skeleton-demo",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["skeleton"],
+    component: lazy(() => import("~/registry/examples/skeleton-demo.tsx")),
+    files: [{
+      path: "registry/examples/skeleton-demo.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    categories: undefined,
+    meta: undefined,
+  },
+  "skeleton-card": {
+    name: "skeleton-card",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["skeleton"],
+    component: lazy(() => import("~/registry/examples/skeleton-card.tsx")),
+    files: [{
+      path: "registry/examples/skeleton-card.tsx",
       type: "registry:example",
       target: ""
     }],

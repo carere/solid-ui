@@ -418,5 +418,27 @@ export const examples: Registry["items"] = [
         type: "registry:example"
       }
     ]
+  },
+  {
+    name: "skeleton-demo",
+    type: "registry:example",
+    registryDependencies: ["skeleton"],
+    files: [
+      {
+        path: "examples/skeleton-demo.tsx",
+        type: "registry:example"
+      }
+    ]
+  },
+  {
+    name: "skeleton-card",
+    type: "registry:example",
+    registryDependencies: ["skeleton"],
+    files: [
+      {
+        path: "examples/skeleton-card.tsx",
+        type: "registry:example"
+      }
+    ]
   }
 ]
