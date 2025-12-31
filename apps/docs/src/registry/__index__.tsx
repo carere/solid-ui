@@ -704,6 +704,20 @@ export const Index: Record<string, any> = {
     categories: undefined,
     meta: undefined,
   },
+  "select-scrollable": {
+    name: "select-scrollable",
+    description: "",
+    type: "registry:example",
+    registryDependencies: ["select"],
+    component: lazy(() => import("~/registry/examples/select-scrollable.tsx")),
+    files: [{
+      path: "registry/examples/select-scrollable.tsx",
+      type: "registry:example",
+      target: ""
+    }],
+    categories: undefined,
+    meta: undefined,
+  },
   "slider-demo": {
     name: "slider-demo",
     description: "",

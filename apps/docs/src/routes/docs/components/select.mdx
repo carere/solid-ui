@@ -1,6 +1,9 @@
 ---
 title: Select
 description: Displays a list of options for the user to pick from—triggered by a button.
+links:
+  doc: https://kobalte.dev/docs/core/components/select
+  api: https://kobalte.dev/docs/core/components/select#api-reference
 ---
 
 ::::tab-group[preview]
@@ -9,10 +12,85 @@ description: Displays a list of options for the user to pick from—triggered by
 <ComponentPreview name="select-demo" />
 
 :::
-
 :::tab[Code]
 
 ```file="~/registry/examples/select-demo" frame=none showLineNumbers
+
+```
+
+:::
+::::
+
+## Installation
+
+### CLI
+
+```package-exec
+solidui-cli@latest add select
+```
+
+### Manual
+
+Install the following dependencies:
+
+```package-install
+@kobalte/core
+```
+
+Copy and paste the following code into your project.
+
+```file="~/registry/ui/select.tsx" showLineNumbers
+
+```
+
+## Usage
+
+```tsx
+import {
+  Select,
+  SelectContent,
+  SelectGroup,
+  SelectItem,
+  SelectLabel,
+  SelectTrigger,
+  SelectValue
+} from "~/components/ui/select"
+```
+
+```tsx showLineNumbers
+<Select
+  options={["Apple", "Banana", "Orange"]}
+  placeholder="Select a fruit"
+  itemComponent={(props) => (
+    <SelectItem item={props.item}>{props.item.rawValue}</SelectItem>
+  )}
+>
+  <SelectTrigger class="w-[180px]">
+    <SelectValue<string>>{(state) => state.selectedOption()}</SelectValue>
+  </SelectTrigger>
+  <SelectContent>
+    <SelectGroup>
+      <SelectLabel>Fruits</SelectLabel>
+    </SelectGroup>
+  </SelectContent>
+</Select>
+```
+
+## Examples
+
+### Scrollable
+
+A select component with grouped options and scrollable content for displaying many items.
+
+::::tab-group[scrollable]
+:::tab[Preview]
+
+<ComponentPreview name="select-scrollable" />
+
+:::
+:::tab[Code]
+
+```file="~/registry/examples/select-scrollable" frame=none showLineNumbers
 
 ```
 

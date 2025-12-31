@@ -387,6 +387,17 @@ export const examples: Registry["items"] = [
     ]
   },
   {
+    name: "select-scrollable",
+    type: "registry:example",
+    registryDependencies: ["select"],
+    files: [
+      {
+        path: "examples/select-scrollable.tsx",
+        type: "registry:example"
+      }
+    ]
+  },
+  {
     name: "slider-demo",
     type: "registry:example",
     registryDependencies: ["slider"],
