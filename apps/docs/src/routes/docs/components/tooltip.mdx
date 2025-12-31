@@ -1,6 +1,9 @@
 ---
 title: Tooltip
 description: A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.
+links:
+  doc: https://kobalte.dev/docs/core/components/tooltip
+  api: https://kobalte.dev/docs/core/components/tooltip#api-reference
 ---
 
 ::::tab-group[preview]
@@ -9,7 +12,6 @@ description: A popup that displays information related to an element when the el
 <ComponentPreview name="tooltip-demo" />
 
 :::
-
 :::tab[Code]
 
 ```file="~/registry/examples/tooltip-demo" frame=none showLineNumbers
@@ -18,3 +20,40 @@ description: A popup that displays information related to an element when the el
 
 :::
 ::::
+
+## Installation
+
+### CLI
+
+```package-exec
+solidui-cli@latest add tooltip
+```
+
+### Manual
+
+Install the following dependencies:
+
+```package-install
+@kobalte/core
+```
+
+Copy and paste the following code into your project.
+
+```file="~/registry/ui/tooltip.tsx" showLineNumbers
+
+```
+
+## Usage
+
+```tsx
+import { Tooltip, TooltipContent, TooltipTrigger } from "~/components/ui/tooltip";
+```
+
+```tsx showLineNumbers
+<Tooltip>
+  <TooltipTrigger>Hover</TooltipTrigger>
+  <TooltipContent>
+    <p>Add to library</p>
+  </TooltipContent>
+</Tooltip>
+```

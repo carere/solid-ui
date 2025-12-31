@@ -25,13 +25,13 @@ const TooltipContent = <T extends ValidComponent = "div">(
     <TooltipPrimitive.Portal>
       <TooltipPrimitive.Content
         class={cn(
-          "fade-in-0 zoom-in-95 data-[closed]:fade-out-0 data-[closed]:zoom-out-95 z-50 w-fit origin-(--kb-popover-content-transform-origin) animate-in text-balance rounded-md bg-foreground px-3 py-1.5 text-background text-xs data-[closed]:animate-out",
+          "cn-tooltip-content bg-foreground text-background z-50 w-fit max-w-xs origin-(--kb-popover-content-transform-origin)",
           local.class
         )}
         data-slot="tooltip-content"
         {...others}
       >
-        <TooltipPrimitive.Arrow />
+        <TooltipPrimitive.Arrow class="cn-tooltip-arrow bg-foreground fill-foreground z-50 data-[side=bottom]:top-1 data-[side=left]:top-1/2! data-[side=left]:-right-1 data-[side=left]:-translate-y-1/2 data-[side=right]:top-1/2! data-[side=right]:-left-1 data-[side=right]:-translate-y-1/2 data-[side=top]:-bottom-2.5" />
         {local.children}
       </TooltipPrimitive.Content>
     </TooltipPrimitive.Portal>
