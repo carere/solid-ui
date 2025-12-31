@@ -387,6 +387,28 @@ export const examples: Registry["items"] = [
     ]
   },
   {
+    name: "sheet-demo",
+    type: "registry:example",
+    registryDependencies: ["sheet", "button", "input", "label"],
+    files: [
+      {
+        path: "examples/sheet-demo.tsx",
+        type: "registry:example"
+      }
+    ]
+  },
+  {
+    name: "sheet-side",
+    type: "registry:example",
+    registryDependencies: ["sheet", "button", "input", "label"],
+    files: [
+      {
+        path: "examples/sheet-side.tsx",
+        type: "registry:example"
+      }
+    ]
+  },
+  {
     name: "slider-demo",
     type: "registry:example",
     registryDependencies: ["slider"],

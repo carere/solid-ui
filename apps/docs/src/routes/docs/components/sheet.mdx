@@ -1,0 +1,112 @@
+---
+title: Sheet
+description: Extends the Dialog component to display content that complements the main content of the screen.
+links:
+  doc: https://kobalte.dev/docs/core/components/dialog
+  api: https://kobalte.dev/docs/core/components/dialog#api-reference
+---
+
+::::tab-group[preview]
+:::tab[Preview]
+
+<ComponentPreview name="sheet-demo" />
+
+:::
+:::tab[Code]
+
+```file="~/registry/examples/sheet-demo" frame=none showLineNumbers
+
+```
+
+:::
+::::
+
+## Installation
+
+### CLI
+
+```package-exec
+solidui-cli@latest add sheet
+```
+
+### Manual
+
+Install the following dependencies:
+
+```package-install
+@kobalte/core
+```
+
+Copy and paste the following code into your project.
+
+```file="~/registry/ui/sheet.tsx" showLineNumbers
+
+```
+
+## Usage
+
+```tsx
+import {
+  Sheet,
+  SheetContent,
+  SheetDescription,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger
+} from "~/components/ui/sheet";
+```
+
+```tsx
+<Sheet>
+  <SheetTrigger>Open</SheetTrigger>
+  <SheetContent>
+    <SheetHeader>
+      <SheetTitle>Are you absolutely sure?</SheetTitle>
+      <SheetDescription>
+        This action cannot be undone. This will permanently delete your account
+        and remove your data from our servers.
+      </SheetDescription>
+    </SheetHeader>
+  </SheetContent>
+</Sheet>
+```
+
+## Examples
+
+### Side
+
+Use the `side` property to `<SheetContent />` to indicate the edge of the screen where the component will appear. The values can be `top`, `right`, `bottom` or `left`.
+
+::::tab-group[side]
+:::tab[Preview]
+
+<ComponentPreview name="sheet-side" />
+
+:::
+:::tab[Code]
+
+```file="~/registry/examples/sheet-side" frame=none showLineNumbers
+
+```
+
+:::
+::::
+
+### Size
+
+You can adjust the size of the sheet using CSS classes:
+
+```tsx showLineNumbers {3}
+<Sheet>
+  <SheetTrigger>Open</SheetTrigger>
+  <SheetContent class="w-[400px] sm:w-[540px]">
+    <SheetHeader>
+      <SheetTitle>Are you absolutely sure?</SheetTitle>
+      <SheetDescription>
+        This action cannot be undone. This will permanently delete your account
+        and remove your data from our servers.
+      </SheetDescription>
+    </SheetHeader>
+  </SheetContent>
+</Sheet>
+```
